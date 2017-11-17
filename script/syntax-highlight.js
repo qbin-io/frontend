@@ -5,6 +5,9 @@ window.addEventListener("load", () => {
     // Initialize CodeFlask
     window.flask = new CodeFlask();
     flask.run("#content", { language: "", lineNumbers: true });
+    
+    // Initialize syntax language
+    updateSyntaxLanguage($("S").value);
 
     // Update syntax language
     $("S").addEventListener("change", event => updateSyntaxLanguage(event.target.value));
@@ -26,8 +29,5 @@ function updateEditor() {
     const event = document.createEvent("HTMLEvents");
     event.initEvent("input", false, true);
     $("Q").dispatchEvent(event);
-    setTimeout(() => $("Q").dispatchEvent(evt), 50);
+    setTimeout(() => $("Q").dispatchEvent(event), 50);
 }
-
-// Initialize syntax highlighting
-updateSyntaxLanguage($("S").value);
