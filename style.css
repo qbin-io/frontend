@@ -20,8 +20,8 @@ main {
 }
 form,
 main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 65px auto;
   opacity: 1 !important;
 }
 a {
@@ -38,16 +38,17 @@ aside,
 }
 .placeholder .selectable,
 .placeholder .select-on-click,
-h4.select,
+h4.selectable,
 main #content>* {
   pointer-events: auto;
+  -webkit-touch-callout: default;
   -webkit-user-select: text;
   -khtml-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
 }
-h4.select:after {
+h4.selected:after {
   content: "Ctrl+C to copy";
   background: #f5f3f2;
   display: inline-block;
@@ -59,17 +60,17 @@ h4.select:after {
   top: -1px;
 }
 @media (max-width: 600px) {
-  h4.select:after {
+  h4.selected:after {
     display: none;
   }
 }
 aside {
-  height: 65px;
   background: #eae6e4;
   color: #444;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  flex: none;
   z-index: 10;
 }
 aside>a:first-child {
@@ -95,7 +96,7 @@ aside>a:first-child>img {
 .submit>input {
   cursor: pointer;
   width: 64px;
-  font-size: 11px;
+  font-size: 13px;
   padding: 0;
   padding-top: 30px;
   background: url("assets/icons/arrow-right.svg") no-repeat center 35%/30%;
@@ -209,7 +210,14 @@ h4 small {
   }
 }
 @media (max-width: 500px) {
-  h4 {
+  form h4 {
+    display: none;
+  }
+  main h4 {
+    margin: 0 12px;
+    font-size: 14px;
+  }
+  main aside>a:first-child {
     display: none;
   }
 }

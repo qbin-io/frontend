@@ -11,7 +11,7 @@ function setShortcutsVisible(value) {
     }
 }
 window.addEventListener("blur", setShortcutsVisible);
-window.addEventListener("keyup", (event) => { if (!event.ctrlKey) setShortcutsVisible(false) });
+window.addEventListener("keyup", (event) => { if (!event.ctrlKey || event.key == "Control") setShortcutsVisible(false) });
 window.addEventListener("keydown", event => setShortcutsVisible(event.keyCode == 17));
 
 // Keyboard Shortcuts

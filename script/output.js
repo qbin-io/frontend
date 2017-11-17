@@ -13,9 +13,11 @@ if (Date.now() - localStorage.justSubmitted < 30 * 1000) {
 // Make sure the link is only highlighted if it should be highlighted (which is, not together with any other text)
 document.addEventListener("selectionchange", (event) => setTimeout(() => {
     
-    // Not in selection
-    if (!window.getSelection().containsNode(document.querySelector("h4"), true)) {
-        document.querySelector("h4").classList.remove("select");
+    // Show tooltip
+    if (window.getSelection().containsNode(document.querySelector("h4"), true)) {
+        if (!document.querySelector("h4").classList.contains("selected")) document.querySelector("h4").classList.add("selected");
+    } else {
+        if (document.querySelector("h4").classList.contains("selected")) document.querySelector("h4").classList.remove("selected");
     }
 
     if (window.getSelection().containsNode(document.querySelector("#content>*"), true)) {
@@ -24,7 +26,11 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
             range.setStartAfter(document.querySelector("h4"));
         }
     }
+
 }), 10);
+
+// Make selectable because we can control the range using JavaScript
+document.querySelector("h4").classList.add("selectable");
 
 function selectText(el) {
     if (!el) return window.getSelection().removeAllRanges();
@@ -36,7 +42,6 @@ function selectText(el) {
 }
 
 function selectLink(instant) {
-    document.querySelector("h4").classList.add("select");
     if (instant) selectText(document.querySelector("h4"));
-    setTimeout(() => selectText(document.querySelector("h4")), 0);
+    setTimeout(() => selectText(document.querySelector("h4")));
 }

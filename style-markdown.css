@@ -75,6 +75,7 @@
   overflow: auto;
 }
 #content .markdown pre>code {
+  padding: 0 !important;
   background: transparent;
 }
 /* Block elements */

@@ -14,8 +14,8 @@ html, body, form, main
     position: relative
     height: 100%
 form, main
-    display: flex
-    flex-direction: column
+    display: grid
+    grid-template-rows: 65px auto
     opacity: 1 !important // Hide until CSS is loaded
 
 a
@@ -27,14 +27,15 @@ main, aside, .placeholder>div
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-.placeholder .selectable, .placeholder .select-on-click, h4.select, main #content>*
+.placeholder .selectable, .placeholder .select-on-click, h4.selectable, main #content>*
     pointer-events: auto;
+    -webkit-touch-callout: default;
     -webkit-user-select: text;
     -khtml-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
-h4.select:after
+h4.selected:after
     content: "Ctrl+C to copy"
     background: #f5f3f2
     display: inline-block
