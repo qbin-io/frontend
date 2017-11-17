@@ -1,35 +1,42 @@
 // Initialize highlighting.
 Prism.plugins.autoloader.languages_path = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/";
-window.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && !event.shiftKey && !event.altKey && event.keyCode == 65) {
-        event.preventDefault();
-        selectText(document.querySelector("#content>*"));
-    }
-});
 
 // Line numbers in use → use normal padding.
 document.querySelector(".no-linenumber-padding").classList.remove("no-linenumber-padding");
 
-function selectText(el) {
-    if (!el) return window.getSelection().removeAllRanges();
-    let range, selection;
-    if(document.body.createTextRange) {
-        range = document.body.createTextRange();
-        range.moveToElementText(el);
-        range.select();
-    } else if (window.getSelection) {
-        selection = window.getSelection();
-        range = document.createRange();
-        range.selectNodeContents(el);
-        selection.removeAllRanges();
-        selection.addRange(range);
-    }
-}
-
 // If the current document was only recently submitted, highlight the link.
 if (Date.now() - localStorage.justSubmitted < 30 * 1000) {
     localStorage.removeItem("justSubmitted");
+    selectLink();
+}
+
+// Make sure the link is only highlighted if it should be highlighted (which is, not together with any other text)
+document.addEventListener("selectionchange", (event) => setTimeout(() => {
+    
+    // Not in selection
+    if (!window.getSelection().containsNode(document.querySelector("h4"), true)) {
+        document.querySelector("h4").classList.remove("select");
+    }
+
+    if (window.getSelection().containsNode(document.querySelector("#content>*"), true)) {
+        const range = window.getSelection().rangeCount && window.getSelection().getRangeAt(0);
+        if (range && window.getSelection().containsNode(document.querySelector("h4"), true)) {
+            range.setStartAfter(document.querySelector("h4"));
+        }
+    }
+}), 10);
+
+function selectText(el) {
+    if (!el) return window.getSelection().removeAllRanges();
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    selection.removeAllRanges();
+    selection.addRange(range);
+}
+
+function selectLink(instant) {
     document.querySelector("h4").classList.add("select");
-    selectText(document.querySelector("h4"));
-    window.addEventListener("mousedown", () => { document.querySelector("h4").classList.remove("select"); selectText(null)});
+    if (instant) selectText(document.querySelector("h4"));
+    setTimeout(() => selectText(document.querySelector("h4")), 0);
 }

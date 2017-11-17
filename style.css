@@ -27,12 +27,41 @@ main {
 a {
   color: #08f;
 }
-main {
+main,
+aside,
+.placeholder>div {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.placeholder .selectable,
+.placeholder .select-on-click,
+h4.select,
+main #content>* {
+  pointer-events: auto;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+h4.select:after {
+  content: "Ctrl+C to copy";
+  background: #f5f3f2;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 5px;
+  padding: 1px 3px;
+  position: relative;
+  top: -1px;
+}
+@media (max-width: 600px) {
+  h4.select:after {
+    display: none;
+  }
 }
 aside {
   height: 65px;
@@ -103,6 +132,7 @@ aside>input:active {
   padding: 3px 5px;
   height: auto;
   display: flex;
+  white-space: nowrap;
 }
 .buttons>div img {
   height: 1.4em;
