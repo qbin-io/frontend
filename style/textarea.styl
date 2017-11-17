@@ -1,0 +1,26 @@
+#content
+    flex-grow: 1; font-family: "Input Mono Nar Reg", monospace; background: #fff; overflow-y: auto
+#content textarea, #content pre, #content code
+    font-size: 16px
+#content pre
+    padding-left: 3.8em !important; width: auto; right: 0
+#content textarea
+    height: 100%; border: none; padding: 15px
+#content:not(.CodeFlask) textarea
+    -webkit-text-fill-color: #000 !important; opacity: 1 !important
+
+.line-numbers .line-numbers-rows
+    width: 3.8em !important
+code[class*=language-], pre[class*=language-]
+    text-shadow: none !important
+#content code
+    padding: 0 !important
+
+#content ::selection
+    background: #7bf !important
+#content ::-moz-selection
+    background: #7bf !important
+.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url
+    background:hsla(0,0%,100%,0) !important
+.line-numbers .line-numbers-rows
+    border-right: none !important; font-size: 14px !important; letter-spacing: 0.5px !important

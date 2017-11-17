@@ -1,0 +1,51 @@
+.markdown { padding: 1em; margin: 0 auto; max-width: 900px; font-family: Assistant, sans-serif; font-size: 18px; }
+
+/* Headlines */
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 { font-weight: Bold; line-height: 1.1; margin: 25px 0 10px; }
+.markdown h1 { font-size: 3em; }
+.markdown h2 { font-size: 2.4em; }
+.markdown h3 { font-size: 1.9em; }
+.markdown h4 { font-size: 1.5em; }
+.markdown h5 { font-size: 1.2em; }
+.markdown h6 { font-size: 1.0em; }
+
+/* Element margins */
+.markdown p, .markdown pre, .markdown table, .markdown ul, .markdown ol, .markdown blockquote { margin: 10px 0 25px }
+
+/* Inline elements */
+.markdown a { color: #08f; text-decoration: underline; cursor: pointer; }
+@media not print { .markdown a:visited { color: #08f; }}
+.markdown table caption { color: #444; font-style: italic; font-size: 0.9em; }
+
+/* Code */
+#content .markdown pre, #content .markdown code {
+    font-family: "Input Mono Nar Reg", monospace; border-radius: 3px; white-space: pre-wrap; word-wrap: break-word;
+    background: #EAE6E4 !important;
+    padding: 3px 4px !important;
+    margin: 0;
+}
+#content .markdown pre { padding: 15px !important; overflow: auto; }
+#content .markdown pre>code { background: transparent; }
+
+/* Block elements */
+.markdown img:not(.inline) { display: block; width: 100%; }
+
+/* Paragraphs */
+.markdown p { margin: 10px 0 25px; }
+.markdown p:last-child { margin-bottom: 10px; }
+.markdown blockquote { border-left: 5px solid #EAE6E4; margin-left: 15px; padding: 1px 15px; color: #444; }
+.markdown hr { border: none; outline: none; height: 5px; background: #EAE6E4; }
+
+/* Lists */
+.markdown ul, .markdown ol { padding: 0; padding-left: 1em; }
+.markdown ul ul, .markdown ul ol, .markdown ol ul, .markdown ol ol { margin: 0; } /* Nested lists */
+.markdown ul { list-style: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 4' width='6' height='8'><circle cx='1' cy='1' r='1' fill='#181818'/></svg>"); } /* A bit of a smaller bullet */
+.markdown ol { list-style: decimal; }
+
+/* Tables */
+.markdown .table { overflow-y: hidden; overflow-x: auto; padding: 0 2px; } /* Responsive Tables: <div class="table"><table>...</table></div> */
+.markdown table { border-collapse: collapse; min-width: 100%; }
+.markdown table td, .markdown table th { border: 3px solid #EAE6E4; padding: 6px; text-align: left; }
+.markdown table tbody tr:nth-child(even) td { background: #f5f3f2; }
+.markdown table th { background: #EAE6E4; }
+.markdown table caption { text-align: left; caption-side: bottom; }

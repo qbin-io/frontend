@@ -1,0 +1,161 @@
+.CodeFlask__textarea {
+  opacity: 0.538 !important;
+  outline: 0 !important;
+}
+.CodeFlask__textarea:invalid {
+  -webkit-text-fill-color: #000 !important;
+  box-shadow: none;
+}
+.placeholder {
+  display: none;
+  font-size: 16px;
+  max-height: 100%;
+}
+.placeholder>div {
+  font-family: Assistant;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.placeholder ul {
+  margin: 0;
+  padding-left: 1.5em;
+}
+.placeholder b {
+  font-family: "Input Mono Nar Reg", monospace;
+  font-size: 15px;
+  font-weight: normal;
+}
+.placeholder a {
+  pointer-events: auto;
+}
+.placeholder .selectable,
+.placeholder .select-on-click,
+h4.select,
+main #content>* {
+  pointer-events: auto;
+  -webkit-user-select: all;
+  -khtml-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+.CodeFlask__textarea:invalid ~ .placeholder {
+  display: block;
+  margin-left: 3.8em;
+  padding: 15px 15px 15px 1px;
+  color: #767676;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+[data-shortcut] {
+  position: relative;
+}
+[data-shortcut]:after {
+  content: attr(data-shortcut);
+  display: none;
+  font-size: 16px;
+  font-family: Assistant, sans-serif;
+  position: absolute;
+  top: 50%;
+  right: 105%;
+  padding: 1px 3px;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #666;
+  border: 1px solid #08f;
+  border-radius: 2px;
+}
+.shortcuts-visible [data-shortcut]:after {
+  display: block;
+}
+.about[data-shortcut]:after {
+  right: auto;
+  left: 105%;
+}
+.submit[data-shortcut]:after {
+  top: 92%;
+  right: 5%;
+  transform: none;
+}
+#content[data-shortcut]:after {
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+.syntax-selection {
+  background: #f5f3f2;
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.2);
+  width: 350px;
+  position: fixed;
+  top: 59px;
+  right: 68px;
+  z-index: 100;
+  opacity: 1 !important;
+  overflow: hidden;
+  display: none;
+}
+@media screen and (max-width: 486px) {
+  .syntax-selection {
+    width: auto;
+    left: 20px;
+    right: 20px;
+  }
+}
+.syntax-selection input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 5px;
+}
+.syntax-selection a,
+.syntax-selection strong {
+  display: block;
+  padding: 5px 8px;
+  text-decoration: none;
+}
+.syntax-selection a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.syntax-selection strong {
+  color: #444;
+}
+.syntax-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.syntax-selection a.current {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #f50;
+}
+.syntax-selection span.current {
+  color: #f50;
+}
+.syntax-selection .closer {
+  margin-left: auto;
+  display: block;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.syntax-selection .closer:hover {
+  color: #08f;
+}
+.syntax-selection .headline {
+  color: #000;
+  text-transform: uppercase;
+}
+.syntax-selection a:focus {
+  background: rgba(255,255,255,0.5);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  outline: 0;
+}
+/*# sourceMappingURL=style-input.css.map */

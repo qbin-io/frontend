@@ -1,0 +1,37 @@
+.CodeFlask__textarea
+    opacity: .538 !important; outline: 0 !important
+.CodeFlask__textarea:invalid
+    -webkit-text-fill-color: #000 !important; box-shadow: none
+.placeholder
+    display: none; font-size: 16px; max-height: 100%
+.placeholder>div
+    font-family: Assistant; font-size: 18px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+.placeholder ul
+    margin: 0; padding-left: 1.5em
+.placeholder b
+    font-family: "Input Mono Nar Reg", monospace; font-size: 15px; font-weight: normal
+.placeholder a
+    pointer-events: auto
+.placeholder .selectable, .placeholder .select-on-click, h4.select, main #content>*
+    pointer-events: auto;
+    -webkit-user-select: all;
+    -khtml-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+
+.CodeFlask__textarea:invalid ~ .placeholder
+    display: block;
+    margin-left: 3.8em;
+    padding: 15px 15px 15px 1px;
+    color: #767676;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+

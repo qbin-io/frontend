@@ -1,0 +1,96 @@
+aside
+    height: 65px
+    background: #EAE6E4
+    color: #444
+    border-bottom: 1px solid rgba(0,0,0,0.2)
+    display: flex; align-items: center
+    z-index: 10
+
+aside>a:first-child // Logo container
+    margin: 0 12px 0 12px
+    display: flex
+aside>a:first-child>img // Logo
+    height: 40px
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2))
+
+.submit>input, .buttons>div // Control buttons and setting wrappers
+    border: none
+    background: transparent
+    height: 64px
+    font: inherit; color: inherit
+    padding: 0 20px
+    display: flex; align-items: center; justify-content: center
+
+.submit>input // Control buttons (Submit, Raw, Fork, Report)
+    cursor: pointer
+    width: 64px
+    font-size: 11px
+    padding: 0
+    padding-top: 30px
+    background: url("assets/icons/arrow-right.svg") no-repeat center 35% / 30%
+    text-transform: lowercase
+
+// @TODO: I was here
+.submit>input:hover, aside>input:active
+    background-color: rgba(0,0,0,0.1)
+.submit>input:active
+    background-color: rgba(0,0,0,0.15)
+.submit.raw input
+    width: 48px; background-image: url("assets/icons/file-alt.svg")
+.submit.fork input
+    width: 48px; background-image: url("assets/icons/code-branch.svg")
+.submit.report input
+    width: 48px; background-image: url("assets/icons/flag.svg")
+
+.buttons
+    margin-left: auto; display: flex; flex-direction: column; align-items: flex-start; justify-content: center
+.buttons>div
+    font-size: 13px; padding: 3px 5px; height: auto; display: flex
+.buttons>div img
+    height: 1.4em
+.buttons>div span
+    flex-grow: 1
+.buttons>div>img + *
+    margin-left: 5px
+.buttons select
+    font: inherit; color: inherit;
+    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 15 7'><path d='M0 0l5 5L10 0' stroke='%23000' fill='none'/></svg>") no-repeat center right / auto 30%;
+    border: none; border-bottom: 1px solid rgba(0,0,0,0.2);
+    width: 10em; max-width: 100%;
+    outline: 0 !important;
+    cursor: pointer;
+    padding: 3px 3px 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0;
+    text-overflow: '';
+
+.buttons select:hover, .buttons select:active, .buttons select:focus
+    border-bottom-color: rgba(0,0,0,0.6); background-color: rgba(0,0,0,0.1)
+.buttons a, .buttons [contenteditable]
+    color: #08f; text-decoration: none; border-bottom: 1px solid #08f; border-top: 2px solid transparent; padding: 0 2px; min-width: 30px
+
+.actions
+    margin: 0 25px 0 15px
+
+h4, h5
+    margin: 0 0 0 15px
+h4
+    font-weight: bold; cursor: text
+h5
+    font-size: 13px; font-weight: inherit
+h4 em
+    font-style: normal; color: rgba(0,0,0,0.5);
+h4 small
+    font-size: 0; display: inline-block; width: 0
+
+@media (max-width: 600px)
+    h4 em
+        font-size: 0; display: inline-block; width: 0
+    h5
+        display: none
+
+@media (max-width: 500px)
+    h4
+        display: none
+

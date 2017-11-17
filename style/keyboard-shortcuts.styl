@@ -1,0 +1,25 @@
+[data-shortcut]
+    position: relative;
+
+[data-shortcut]:after
+    content: attr(data-shortcut);
+    display: none;
+    font-size: 16px; font-family: Assistant, sans-serif;
+    position: absolute; top: 50%; right: 105%; padding: 1px 3px;
+    transform: translateY(-50%);
+    background: #fff; color: #666; border: 1px solid #08f;
+    border-radius: 2px;
+
+.shortcuts-visible [data-shortcut]:after
+    display: block;
+
+.about[data-shortcut]:after
+    right: auto; left: 105%;
+
+.submit[data-shortcut]:after
+    top: 92%; right: 5%;
+    transform: none;
+
+#content[data-shortcut]:after
+    top: 50%; right: 50%;
+    transform: translate(50%, -50%);

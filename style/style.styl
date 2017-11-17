@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Assistant:400,600");
+
+*
+    box-sizing: border-box
+
+html
+    font-family: Assistant, sans-serif
+body
+    background: #f8f8f8
+
+html, body, form, main
+    min-width: 350px
+    margin: 0; padding: 0
+    position: relative
+    height: 100%
+form, main
+    display: flex
+    flex-direction: column
+    opacity: 1 !important // Hide until CSS is loaded
+
+a
+    color: #08f
+
+// @TODO: What is this doing?
+main {
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+@import "./header"
+@import "./prism-modifications"
+@import "./textarea"

@@ -1,0 +1,35 @@
+.syntax-selection
+    background: #f5f3f2; color: #000;
+    border: 1px solid rgba(0,0,0,0.2);
+    width: 350px;
+    position: fixed; top: 59px; right: 68px;
+    z-index: 100;
+    opacity: 1 !important;
+    overflow: hidden;
+    display: none;
+
+    @media screen and (max-width: 486px)
+        width: auto; left: 20px; right: 20px
+
+.syntax-selection input
+    display: block; width: 100%;border: none; border-top: 1px solid rgba(0,0,0,0.2); border-bottom: 1px solid rgba(0,0,0,0.2); padding: 5px
+.syntax-selection a, .syntax-selection strong
+    display: block; padding: 5px 8px; text-decoration: none
+.syntax-selection a:hover
+    text-decoration: underline; cursor: pointer
+.syntax-selection strong
+    color: #444
+.syntax-grid
+    display: grid; grid-template-columns: 1fr 1fr
+.syntax-selection a.current
+    font-weight: bold; text-decoration: underline; color: #FF5500
+.syntax-selection span.current
+    color: #FF5500
+.syntax-selection .closer
+    margin-left: auto; display: block; margin-right: 2px; cursor: pointer
+.syntax-selection .closer:hover
+    color: #08f
+.syntax-selection .headline
+    color: #000; text-transform: uppercase
+.syntax-selection a:focus
+    background: rgba(255,255,255,0.5); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); outline: 0
