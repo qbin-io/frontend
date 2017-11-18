@@ -129,12 +129,16 @@
   overflow-y: hidden;
   overflow-x: auto;
   padding: 0 2px;
-  word-break: break-all;
 }
-/* Responsive Tables: <div class="table"><table>...</table></div> */
+@media screen and (min-width: 936px) {
+  .markdown .table {
+    overflow-x: initial;
+  }
+}
 .markdown table {
   border-collapse: collapse;
   min-width: 100%;
+  word-break: break-all;
 }
 .markdown table td,
 .markdown table th {
