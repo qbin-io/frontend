@@ -1,8 +1,8 @@
 [...document.querySelectorAll("[data-time-in]")].forEach((e) => {
     let time = e[e.getAttribute("data-time-in")];
-    if (!time) console.warn("[Timezone Manipulator] The property doesn't exist.", e);
-    time = time.match(/^\s*(?:(\d+)-(\d+)-(\d+)\s+)?(\d+):(\d+)(?::(\d+))?(?:\s+\(UTC\))\s*$/);
-    if (!time) console.warn("[Timezone Manipulator] Time is not in format '[YYYY-MM-DD ]hh:mm[:ss][ UTC]' (parts in brackets are optional) an thus cannot be processed.", e);
+    if (!time) return console.warn("[Timezone Manipulator] The property doesn't exist.", e);
+    time = time.match(/^\s*(?:(\d+)-(\d+)-(\d+)\s+)?(\d+):(\d+)(?::(\d+))?(?:\s+\(UTC\))?\s*$/);
+    if (!time) return console.warn("[Timezone Manipulator] Time is not in format '[YYYY-MM-DD ]hh:mm[:ss][ UTC]' (parts in brackets are optional) an thus cannot be processed.", e);
 
     const date = new Date();
     if (time.length >= 6) {
