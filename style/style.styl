@@ -8,12 +8,12 @@ html
 body
     background: #f8f8f8
 
-html, body, form, main
+html, body, body>form, body>main
     min-width: 350px
     margin: 0; padding: 0
     position: relative
     height: 100%
-form, main
+body>form, body>main
     display: grid
     grid-template-rows: 65px auto
     opacity: 1 !important // Hide until CSS is loaded
@@ -21,13 +21,13 @@ form, main
 a
     color: #08f
 
-main, aside, .placeholder>div
+main, body>*>aside, .placeholder>div
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-.placeholder .selectable, .placeholder .select-on-click, h4.selectable, main #content>*
+.placeholder .selectable, .placeholder .select-on-click, body>*>aside h4.selectable, body>main #content
     pointer-events: auto;
     -webkit-touch-callout: default;
     -webkit-user-select: text;

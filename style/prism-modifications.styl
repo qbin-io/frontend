@@ -3,17 +3,17 @@
     color: inherit
 
 /* Prism Soft Wrap for Line Numbers (https://github.com/PrismJS/prism/pull/584) */
-pre.line-numbers > code
+#content>pre.line-numbers > code
     display: inline-block
     white-space: inherit
 
 /* Prism reset */
-pre
+#content>pre
     background: transparent !important
     margin: 0 !important
     padding: 1em
 
-#content pre.no-linenumber-padding
+#content>pre.no-linenumber-padding
     padding-left: 1em !important
-main pre .line-numbers-rows
+body>main #content>pre .line-numbers-rows
     top: 2px !important // Can't explain this, but somehow it's moved by 2.5 pixels when not using CodeFlask

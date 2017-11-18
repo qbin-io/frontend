@@ -1,18 +1,18 @@
-aside
+body>*>aside
     background: #EAE6E4
     color: #444
     border-bottom: 1px solid rgba(0,0,0,0.2)
     display: flex; align-items: center; flex: none
     z-index: 10
 
-aside>a:first-child // Logo container
+body>*>aside>a:first-child // Logo container
     margin: 0 12px 0 12px
     display: flex
-aside>a:first-child>img // Logo
+body>*>aside>a:first-child>img // Logo
     height: 40px
     filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2))
 
-.submit>input, .buttons>div // Control buttons and setting wrappers
+.submit>*, .buttons>div // Control buttons and setting wrappers
     border: none
     background: transparent
     height: 64px
@@ -20,25 +20,28 @@ aside>a:first-child>img // Logo
     padding: 0 20px
     display: flex; align-items: center; justify-content: center
 
-.submit>input // Control buttons (Submit, Raw, Fork, Report)
+.submit>* // Control buttons (Submit, Raw, Fork, Report)
+    display: block
     cursor: pointer
     width: 64px
     font-size: 13px
     padding: 0
-    padding-top: 30px
     background: url("assets/icons/arrow-right.svg") no-repeat center 35% / 30%
     text-transform: lowercase
+    text-decoration: none
+    text-align: center
+    line-height: 96px
 
 // @TODO: I was here
-.submit>input:hover, aside>input:active
+.submit>*:hover, body>*>aside>input:active
     background-color: rgba(0,0,0,0.1)
-.submit>input:active
+.submit>*:active
     background-color: rgba(0,0,0,0.15)
-.submit.raw input
+.submit.raw>*
     width: 48px; background-image: url("assets/icons/file-alt.svg")
-.submit.fork input
+.submit.fork>*
     width: 48px; background-image: url("assets/icons/code-branch.svg")
-.submit.report input
+.submit.report>*
     width: 48px; background-image: url("assets/icons/flag.svg")
 
 .buttons
@@ -73,30 +76,31 @@ aside>a:first-child>img // Logo
 .actions
     margin: 0 25px 0 15px
 
-h4, h5
-    margin: 0 0 0 15px
-h4
-    font-weight: bold; cursor: text
-h5
-    font-size: 13px; font-weight: inherit
-h4 em
-    font-style: normal; color: rgba(0,0,0,0.5);
-h4 small
-    font-size: 0; display: inline-block; width: 0
-
-@media (max-width: 600px)
-    h4 em
-        font-size: 0; display: inline-block; width: 0
+body>*>aside
+    h4, h5
+        margin: 0 0 0 15px
+    h4
+        font-weight: bold; cursor: text
     h5
-        display: none
+        font-size: 13px; font-weight: inherit
+    h4 em
+        font-style: normal; color: rgba(0,0,0,0.5);
+    h4 small
+        font-size: 0; display: inline-block; width: 0
+
+    @media (max-width: 600px)
+        h4 em
+            font-size: 0; display: inline-block; width: 0
+        h5
+            display: none
 
 @media (max-width: 500px)
-    form h4
+    body>form>aside h4
         display: none
-    main h4
+    body>main>aside h4
         margin: 0 12px
         font-size: 14px
-    main aside>a:first-child
+    body>main>aside>a:first-child
         display: none
     
 

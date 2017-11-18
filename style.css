@@ -10,16 +10,16 @@ body {
 }
 html,
 body,
-form,
-main {
+body>form,
+body>main {
   min-width: 350px;
   margin: 0;
   padding: 0;
   position: relative;
   height: 100%;
 }
-form,
-main {
+body>form,
+body>main {
   display: grid;
   grid-template-rows: 65px auto;
   opacity: 1 !important;
@@ -28,7 +28,7 @@ a {
   color: #08f;
 }
 main,
-aside,
+body>*>aside,
 .placeholder>div {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -38,8 +38,8 @@ aside,
 }
 .placeholder .selectable,
 .placeholder .select-on-click,
-h4.selectable,
-main #content>* {
+body>*>aside h4.selectable,
+body>main #content {
   pointer-events: auto;
   -webkit-touch-callout: default;
   -webkit-user-select: text;
@@ -64,7 +64,7 @@ h4.selected:after {
     display: none;
   }
 }
-aside {
+body>*>aside {
   background: #eae6e4;
   color: #444;
   border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -73,15 +73,15 @@ aside {
   flex: none;
   z-index: 10;
 }
-aside>a:first-child {
+body>*>aside>a:first-child {
   margin: 0 12px 0 12px;
   display: flex;
 }
-aside>a:first-child>img {
+body>*>aside>a:first-child>img {
   height: 40px;
   filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
 }
-.submit>input,
+.submit>*,
 .buttons>div {
   border: none;
   background: transparent;
@@ -93,31 +93,34 @@ aside>a:first-child>img {
   align-items: center;
   justify-content: center;
 }
-.submit>input {
+.submit>* {
+  display: block;
   cursor: pointer;
   width: 64px;
   font-size: 13px;
   padding: 0;
-  padding-top: 30px;
   background: url("assets/icons/arrow-right.svg") no-repeat center 35%/30%;
   text-transform: lowercase;
+  text-decoration: none;
+  text-align: center;
+  line-height: 96px;
 }
-.submit>input:hover,
-aside>input:active {
+.submit>*:hover,
+body>*>aside>input:active {
   background-color: rgba(0,0,0,0.1);
 }
-.submit>input:active {
+.submit>*:active {
   background-color: rgba(0,0,0,0.15);
 }
-.submit.raw input {
+.submit.raw>* {
   width: 48px;
   background-image: url("assets/icons/file-alt.svg");
 }
-.submit.fork input {
+.submit.fork>* {
   width: 48px;
   background-image: url("assets/icons/code-branch.svg");
 }
-.submit.report input {
+.submit.report>* {
   width: 48px;
   background-image: url("assets/icons/flag.svg");
 }
@@ -178,65 +181,65 @@ aside>input:active {
 .actions {
   margin: 0 25px 0 15px;
 }
-h4,
-h5 {
+body>*>aside h4,
+body>*>aside h5 {
   margin: 0 0 0 15px;
 }
-h4 {
+body>*>aside h4 {
   font-weight: bold;
   cursor: text;
 }
-h5 {
+body>*>aside h5 {
   font-size: 13px;
   font-weight: inherit;
 }
-h4 em {
+body>*>aside h4 em {
   font-style: normal;
   color: rgba(0,0,0,0.5);
 }
-h4 small {
+body>*>aside h4 small {
   font-size: 0;
   display: inline-block;
   width: 0;
 }
 @media (max-width: 600px) {
-  h4 em {
+  body>*>aside h4 em {
     font-size: 0;
     display: inline-block;
     width: 0;
   }
-  h5 {
+  body>*>aside h5 {
     display: none;
   }
 }
 @media (max-width: 500px) {
-  form h4 {
+  body>form>aside h4 {
     display: none;
   }
-  main h4 {
+  body>main>aside h4 {
     margin: 0 12px;
     font-size: 14px;
   }
-  main aside>a:first-child {
+  body>main>aside>a:first-child {
     display: none;
   }
 }
 .token a {
   color: inherit;
 }
-pre.line-numbers > code {
+#content>pre.line-numbers > code {
   display: inline-block;
   white-space: inherit;
 }
-pre {
+#content>pre {
   background: transparent !important;
   margin: 0 !important;
   padding: 1em;
 }
-#content pre.no-linenumber-padding {
+#content>pre.no-linenumber-padding {
   padding-left: 1em !important;
 }
-main pre .line-numbers-rows {
+body>main #content>pre .line-numbers-rows {
   top: 2px !important;
 }
 #content {
@@ -245,22 +248,22 @@ main pre .line-numbers-rows {
   background: #fff;
   overflow-y: auto;
 }
-#content textarea,
-#content pre,
-#content code {
+#content>textarea,
+#content>pre,
+#content>pre>code {
   font-size: 16px;
 }
-#content pre {
+#content>pre {
   padding-left: 3.8em !important;
   width: auto;
   right: 0;
 }
-#content textarea {
+#content>textarea {
   height: 100%;
   border: none;
   padding: 15px;
 }
-#content:not(.CodeFlask) textarea {
+#content:not(.CodeFlask)>textarea {
   -webkit-text-fill-color: #000 !important;
   opacity: 1 !important;
 }
@@ -271,7 +274,7 @@ code[class*=language-],
 pre[class*=language-] {
   text-shadow: none !important;
 }
-#content code {
+#content>pre>code {
   padding: 0 !important;
 }
 #content ::selection {
