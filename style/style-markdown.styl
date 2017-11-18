@@ -44,11 +44,8 @@
 .markdown ol { list-style: decimal; }
 
 /* Tables */
-.markdown .table // Responsive Tables: <div class="table"><table>...</table></div>
-    overflow-y: hidden; overflow-x: auto; padding: 0 2px;
-    @media screen and (min-width: 936px)
-        overflow-x: initial
-.markdown table { border-collapse: collapse; min-width: 100%; word-break: break-all; }
+.markdown .table { overflow-y: hidden; overflow-x: auto; padding: 0 2px; word-break: break-all; } /* Responsive Tables: <div class="table"><table>...</table></div> */
+.markdown table { border-collapse: collapse; min-width: 100%; }
 .markdown table td, .markdown table th { border: 3px solid #EAE6E4; padding: 6px; text-align: left; }
 .markdown table tbody tr:nth-child(even) td { background: #f5f3f2; }
 .markdown table th { background: #EAE6E4; }
