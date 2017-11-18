@@ -5,26 +5,26 @@
 <meta name=description content="A minimalist pastebin service. Paste your code, or write some! Includes a nice and easy Netcat and POST API, and can render Markdown.">$$if_fork$$
 <meta name="robots" content="noindex">$$/if_fork$$
 <link rel="canonical" href="$$root$$/">
-<link rel="shortcut icon" type="image/x-icon" href="$$relative-root$$/favicon.ico">
-<link rel="shortcut icon" type="image/svg+xml" href="$$relative-root$$/assets/logo.svg">
+<link rel="shortcut icon" type="image/x-icon" href="$$path$$/favicon.ico">
+<link rel="shortcut icon" type="image/svg+xml" href="$$path$$/assets/logo.svg">
 
 <link rel="stylesheet" href="https://cloud.typenetwork.com/projects/1442/fontface.css/"><!-- Input -->
-<link rel="stylesheet" href="$$relative-root$$/style.css">
-<link rel="stylesheet" href="$$relative-root$$/style-input.css">
+<link rel="stylesheet" href="$$path$$/style.css">
+<link rel="stylesheet" href="$$path$$/style-input.css">
 
-<form id="F" action="$$relative-root$$/" method="POST" novalidate style="opacity: 0"><!-- Hide until CSS is loaded -->
+<form id="F" action="$$path$$/" method="POST" novalidate style="opacity: 0"><!-- Hide until CSS is loaded -->
 
 <aside>
-    <a href="/"><img src="$$relative-root$$/assets/logo.svg" alt="qbin.io"></a>
+    <a href="/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
     <h4>qbin</h4>
     <div class="buttons">
-        <div data-shortcut="Ctrl+E" title="Expiration"><img src="$$relative-root$$/assets/icons/calendar-alt.svg" alt="Expiration:"> <select id="E">
+        <div data-shortcut="Ctrl+E" title="Expiration"><img src="$$path$$/assets/icons/calendar-alt.svg" alt="Expiration:"> <select id="E">
             <option value="30m">30 mins</option>
             <option value="24h">24 hours</option>
             <option value="14d" selected>14 days</option>
             <option value="0">never</option>
         </select></div>
-        <div data-shortcut="Ctrl+S" title="Syntax Highlighting"><img src="$$relative-root$$/assets/icons/code.svg" alt="Syntax Highlighting:"> <select id="S">
+        <div data-shortcut="Ctrl+S" title="Syntax Highlighting"><img src="$$path$$/assets/icons/code.svg" alt="Syntax Highlighting:"> <select id="S">
             <optgroup label="General">
                 <option value="none">No Highlighting</option>
                 <option value="markdown!">Markdown Render</option>
@@ -199,10 +199,10 @@
             <li>Hold <b>Ctrl</b> to see all available keyboard shortcuts</li>
             <li>Submit command output from any shell with <a><b onclick="selectText(this)">&nbsp;| nc qbin.io 90</b></a><br><small>(pro-tip: click that text, then click the scroll wheel in your terminal to paste)</small></li>
         </ul><br>
-        By submitting any content to qbin.io, you accept and confirm that your document complies with our <a href="$$relative-root$$/guidelines">guidelines</a>.<br><br>
+        By submitting any content to qbin.io, you accept and confirm that your document complies with our <a href="$$path$$/guidelines">guidelines</a>.<br><br>
 
         <strong>Using qbin often? You should consider <a href="https://liberapay.com/qbin/" target="_BLANK">donating on Liberapay</a>.</strong><br>
-        » <a href="$$relative-root$$/api">API documentation</a><br>
+        » <a href="$$path$$/api">API documentation</a><br>
         » <a href="https://github.com/moqmar/qbin">Source on GitHub</a><br>
         » <a href="https://github.com/moqmar/qbin/issues/new">Report an issue</a><br><br>
     </div></div>
@@ -244,18 +244,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/autolinker/prism-autolinker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/autoloader/prism-autoloader.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/data-uri-highlight/prism-data-uri-highlight.min.js"></script>
-<script src="$$relative-root$$/lib/prism-line-numbers.js"></script><!-- @TODO: Diff. Something was wrong with the official plugin -->
-<script src="$$relative-root$$/lib/codeflask.js"></script><!-- @TODO: Diff. Something was wrong with the official version -->
+<script src="$$path$$/lib/prism-line-numbers.js"></script><!-- @TODO: Diff. Something was wrong with the official plugin -->
+<script src="$$path$$/lib/codeflask.js"></script><!-- @TODO: Diff. Something was wrong with the official version -->
 
 <script>window.$ = document.getElementById.bind(document);</script><!-- jQuery for poor people :( -->
-<script src="$$relative-root$$/script/tools.js"></script>
-<script src="$$relative-root$$/script/syntax-highlight.js"></script>
-<script src="$$relative-root$$/script/syntax-selection.js"></script>
-<script src="$$relative-root$$/script/keyboard-shortcuts.js"></script>
-<script src="$$relative-root$$/script/drop-and-paste.js"></script>
-<script src="$$relative-root$$/script/select-text.js"></script>
+<script src="$$path$$/script/tools.js"></script>
+<script src="$$path$$/script/syntax-highlight.js"></script>
+<script src="$$path$$/script/syntax-selection.js"></script>
+<script src="$$path$$/script/keyboard-shortcuts.js"></script>
+<script src="$$path$$/script/drop-and-paste.js"></script>
+<script src="$$path$$/script/select-text.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/line-highlight/prism-line-highlight.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/line-numbers/prism-line-numbers.min.css">
-<link rel="stylesheet" href="$$relative-root$$/lib/codeflask.min.css"><!-- @TODO: Diff. Something was wrong with the official version -->
+<link rel="stylesheet" href="$$path$$/lib/codeflask.min.css"><!-- @TODO: Diff. Something was wrong with the official version -->

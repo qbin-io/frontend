@@ -5,18 +5,18 @@
 <meta name=description content="A minimalist pastebin service. Paste your code, or write some! Includes a nice and easy Netcat and POST API, and can render Markdown.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="$$root$$/$$id$$/report">
-<link rel="shortcut icon" type="image/x-icon" href="$$relative-root$$/favicon.ico">
-<link rel="shortcut icon" type="image/svg+xml" href="$$relative-root$$/assets/logo.svg">
+<link rel="shortcut icon" type="image/x-icon" href="$$path$$/favicon.ico">
+<link rel="shortcut icon" type="image/svg+xml" href="$$path$$/assets/logo.svg">
 
 <link rel="stylesheet" href="https://cloud.typenetwork.com/projects/1442/fontface.css/"><!-- Input -->
 <link rel="stylseheet" href="https://fonts.googleapis.com/css?family=Assistant:400,600"><!-- Assistant -->
-<link rel="stylesheet" href="$$relative-root$$/style.css">
-<link rel="stylesheet" href="$$relative-root$$/style-markdown.css">
+<link rel="stylesheet" href="$$path$$/style.css">
+<link rel="stylesheet" href="$$path$$/style-markdown.css">
 
 <main style="opacity: 0"><!-- Hide until CSS is loaded -->
 
 <aside>
-    <a href="$$relative-root$$/"><img src="$$relative-root$$/assets/logo.svg" alt="qbin.io"></a>
+    <a href="$$path$$/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
     <div>
         <h4>Report <em>$$id$$</em></h4>
     </div>
@@ -25,7 +25,7 @@
 <div id="content">
     <div class="markdown">
         <h2>Document removal request</h2>
-        <p>You're about to report the document <a href="$$relative-root$$/$$id$$" target="_blank">$$root$$/$$id$$</a> for a violation of <a href="/guidelines" target="_blank">our guidelines</a>.</p>
+        <p>You're about to report the document <a href="$$path$$/$$id$$" target="_blank">$$root$$/$$id$$</a> for a violation of <a href="/guidelines" target="_blank">our guidelines</a>.</p>
         <form action="https://www.getform.org/f/3e068cad-d0da-4fcd-8538-344eaed442ff" method="POST">
             <input name="document" type="hidden" value="$$root$$/$$id$$">
             
@@ -33,7 +33,7 @@
 
             <h3 style="margin-top: 50px">What are the reasons for the removal request?</h3>
             <p>
-                Only documents that don't comply with <a href="$$relative-root$$/guidelines" target="_blank">our guidelines</a> will be removed.<br>
+                Only documents that don't comply with <a href="$$path$$/guidelines" target="_blank">our guidelines</a> will be removed.<br>
                 <small>Examples: spam, copyright infringement, leakage of personal data, ...</small>
             </p>
             <textarea name="reason" placeholder="This document violates the guidelines because..." autofocus></textarea>
