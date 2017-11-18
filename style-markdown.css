@@ -150,6 +150,10 @@
   text-align: left;
   caption-side: bottom;
 }
+.markdown code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 /* Report Form */
 .markdown input,
 .markdown textarea {
