@@ -23,24 +23,28 @@
 
 <div id="content">
     <div class="markdown">
-        <h1>Report a document</h1>
-        <p>You're about to report the document <a href="$$relative-root$$/$$id$$" target="_blank">$$id$$</a> for a violation of <a href="/guidelines" target="_blank">our guidelines</a>.</p>
+        <h2>Document removal request</h2>
+        <p>You're about to report the document <a href="$$relative-root$$/$$id$$" target="_blank">$$root$$/$$id$$</a> for a violation of <a href="/guidelines" target="_blank">our guidelines</a>.</p>
         <form action="https://www.getform.org/f/3e068cad-d0da-4fcd-8538-344eaed442ff" method="POST">
             <input name="document" type="hidden" value="$$root$$/$$id$$">
+            
+            <hr style="margin-top: 50px">
 
-            <h3>What are the reasons for the removal request?</h3>
-            <p>Only documents that don't comply with <a href="$$relative-root$$/guidelines" target="_blank">our guidelines</a> will be removed.<br>e.g. <em>spam, copyright infringement, leakage of personal data, ...</em></p>
-            <textarea name="reason"></textarea>
+            <h3 style="margin-top: 50px">What are the reasons for the removal request?</h3>
+            <p>
+                Only documents that don't comply with <a href="$$relative-root$$/guidelines" target="_blank">our guidelines</a> will be removed.<br>
+                <small>Examples: spam, copyright infringement, leakage of personal data, ...</small>
+            </p>
+            <textarea name="reason" placeholder="This document violates the guidelines because..." autofocus></textarea>
 
-            <hr>
-
-            <h3>Which email address can we use to contact you?</h3>
+            <h3 style="margin-top: 50px">Which email address can we use to contact you?</h3>
             <p>We will only use this information to inform you as soon as your request was accepted and the document has been removed, or to tell you why it was denied.</p>
-            <input name="email" type="email">
+            <input name="email" type="email" placeholder="mail@example.org">
 
-            <hr>
+            <hr style="margin-top: 50px">
 
-            <input type="submit" value="Report this document">
+            <input type="submit" value="Report this document" style="margin-top: 50px">
+            <br style="clear: both">
         </form>
     </div>
 </div>

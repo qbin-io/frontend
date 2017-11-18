@@ -4,6 +4,7 @@
   max-width: 900px;
   font-family: Assistant, sans-serif;
   font-size: 18px;
+  line-height: 1.6;
 }
 /* Headlines */
 .markdown h1,
@@ -148,5 +149,37 @@
 .markdown table caption {
   text-align: left;
   caption-side: bottom;
+}
+/* Report Form */
+.markdown input,
+.markdown textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  background: #f5f3f2;
+  padding: 10px 15px;
+  border-radius: 3px;
+  font: inherit;
+  color: #000;
+}
+.markdown input:hover,
+.markdown textarea:hover {
+  background: #f0edeb;
+}
+.markdown input:focus,
+.markdown textarea:focus {
+  background: #eae6e4;
+}
+.markdown input[type="submit"] {
+  background: #eae6e4;
+  float: right;
+  width: 200px;
+  cursor: pointer;
+}
+.markdown input[type="submit"]:hover {
+  background: #e5e0dd;
+}
+.markdown input[type="submit"]:focus {
+  background: #dfd9d6;
 }
 /*# sourceMappingURL=style-markdown.css.map */

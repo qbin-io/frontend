@@ -1,4 +1,4 @@
-.markdown { padding: 1em; margin: 0 auto; max-width: 900px; font-family: Assistant, sans-serif; font-size: 18px; }
+.markdown { padding: 1em; margin: 0 auto; max-width: 900px; font-family: Assistant, sans-serif; font-size: 18px; line-height: 1.6; }
 
 /* Headlines */
 .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 { font-weight: Bold; line-height: 1.1; margin: 25px 0 10px; }
@@ -49,3 +49,30 @@
 .markdown table tbody tr:nth-child(even) td { background: #f5f3f2; }
 .markdown table th { background: #EAE6E4; }
 .markdown table caption { text-align: left; caption-side: bottom; }
+
+/* Report Form */
+.markdown input, .markdown textarea
+    display: block
+    width: 100%
+    border: none 
+    background: #f5f3f2
+    padding: 10px 15px
+    border-radius: 3px
+    font: inherit
+    color: #000
+    
+    &:hover
+        background: #F0EDEB
+    &:focus
+        background: #EAE6E4
+
+.markdown input[type="submit"]
+    background: #EAE6E4
+    float: right
+    width: 200px
+    cursor: pointer
+
+    &:hover
+        background: #E5E0DD
+    &:focus
+        background: #dfd9d6
