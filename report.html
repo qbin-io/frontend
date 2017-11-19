@@ -13,39 +13,39 @@
 
 <main class="always-show-logo" style="opacity: 0"><!-- Hide until CSS is loaded -->
 
-<aside>
-    <a href="$$path$$/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
-    <div>
-        <h4>Report <em>$$id$$</em></h4>
+    <aside>
+        <a href="$$path$$/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
+        <div>
+            <h4>Report <em>$$id$$</em></h4>
+        </div>
+    </aside>
+
+    <div id="content">
+        <div class="markdown">
+            <h2>Document removal request</h2>
+            <p>You're about to report the document <a href="$$path$$/$$id$$" target="_blank">$$root$$/$$id$$</a> for a violation of <a href="/guidelines" target="_blank">our guidelines</a>.</p>
+            <form action="https://www.getform.org/f/3e068cad-d0da-4fcd-8538-344eaed442ff" method="POST">
+                <input name="document" type="hidden" value="$$root$$/$$id$$">
+                
+                <hr style="margin-top: 50px">
+
+                <h3 style="margin-top: 50px">What are the reasons for the removal request?</h3>
+                <p>
+                    Only documents that don't comply with <a href="$$path$$/guidelines" target="_blank">our guidelines</a> will be removed.<br>
+                    <small>Examples: spam, copyright infringement, leakage of personal data, ...</small>
+                </p>
+                <textarea name="reason" placeholder="This document violates the guidelines because..." autofocus></textarea>
+
+                <h3 style="margin-top: 50px">Which email address can we use to contact you?</h3>
+                <p>We will only use this information to inform you as soon as your request was accepted and the document has been removed, or to tell you why it was denied.</p>
+                <input name="email" type="email" placeholder="mail@example.org">
+
+                <hr style="margin-top: 50px">
+
+                <input type="submit" value="Report this document" style="margin-top: 50px">
+                <br style="clear: both">
+            </form>
+        </div>
     </div>
-</aside>
-
-<div id="content">
-    <div class="markdown">
-        <h2>Document removal request</h2>
-        <p>You're about to report the document <a href="$$path$$/$$id$$" target="_blank">$$root$$/$$id$$</a> for a violation of <a href="/guidelines" target="_blank">our guidelines</a>.</p>
-        <form action="https://www.getform.org/f/3e068cad-d0da-4fcd-8538-344eaed442ff" method="POST">
-            <input name="document" type="hidden" value="$$root$$/$$id$$">
-            
-            <hr style="margin-top: 50px">
-
-            <h3 style="margin-top: 50px">What are the reasons for the removal request?</h3>
-            <p>
-                Only documents that don't comply with <a href="$$path$$/guidelines" target="_blank">our guidelines</a> will be removed.<br>
-                <small>Examples: spam, copyright infringement, leakage of personal data, ...</small>
-            </p>
-            <textarea name="reason" placeholder="This document violates the guidelines because..." autofocus></textarea>
-
-            <h3 style="margin-top: 50px">Which email address can we use to contact you?</h3>
-            <p>We will only use this information to inform you as soon as your request was accepted and the document has been removed, or to tell you why it was denied.</p>
-            <input name="email" type="email" placeholder="mail@example.org">
-
-            <hr style="margin-top: 50px">
-
-            <input type="submit" value="Report this document" style="margin-top: 50px">
-            <br style="clear: both">
-        </form>
-    </div>
-</div>
 
 </main>

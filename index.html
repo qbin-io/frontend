@@ -13,199 +13,199 @@
 
 <form id="F" class="always-show-logo" action="$$path$$/" method="POST" novalidate style="opacity: 0"><!-- Hide until CSS is loaded -->
 
-<aside>
-    <a href="/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
-    <h4>qbin</h4>
-    <div class="buttons">
-        <div data-shortcut="Ctrl+E" title="Expiration"><img src="$$path$$/assets/icons/calendar-alt.svg" alt="Expiration:"> <select id="E">
-            <option value="30m">30 mins</option>
-            <option value="24h">24 hours</option>
-            <option value="14d" selected>14 days</option>
-            <option value="0">never</option>
-        </select></div>
-        <div data-shortcut="Ctrl+S" title="Syntax Highlighting"><img src="$$path$$/assets/icons/code.svg" alt="Syntax Highlighting:"> <select id="S">
-            <optgroup label="General">
-                <option value="none">No Highlighting</option>
-                <option value="markdown!">Markdown Render</option>
-            </optgroup>
-            <optgroup label="Programming" id="syntax-programming">
-                <option value="cpp">C/C++</option>
-                <option value="csharp">C#</option>
-                <option value="go">Go</option>
-                <option value="java">Java</option>
-                <option value="lua">Lua</option>
-                <option value="php-extras">PHP</option>
-                <option value="sql">SQL</option>
-            </optgroup>
-            <optgroup label="Web" id="syntax-web">
-                <option value="markup">HTML/XML/SVG/...</option>
-                <option value="javascript">JavaScript</option>
-                <option value="css-extras">CSS</option>
-            </optgroup>
-            <optgroup label="Scripting" id="syntax-scripting">
-                <option value="batch">Batch</option>
-                <option value="powershell">PowerShell</option>
-                <option value="bash">Shell Script/Bash</option>
-            </optgroup>
-            <optgroup label="Configuration" id="syntax-configuration">
-                <option value="apacheconf">Apache Config</option>
-                <option value="nginx">nginx Config</option>
-                <option value="docker">Dockerfile</option>
-                <option value="makefile">Makefile</option>
-                <option value="yaml">YAML</option>
-            </optgroup>
-            <optgroup label="All Languages">
-                <option>abap</option>
-                <option>actionscript</option>
-                <option>ada</option>
-                <option>apacheconf</option>
-                <option>apl</option>
-                <option>applescript</option>
-                <option>asciidoc</option>
-                <option>aspnet</option>
-                <option>autoit</option>
-                <option>autohotkey</option>
-                <option>bash</option>
-                <option>basic</option>
-                <option>batch</option>
-                <option>bison</option>
-                <option>brainfuck</option>
-                <option>bro</option>
-                <option value="clike">c</option>
-                <option>coffeescript</option>
-                <option>cpp</option>
-                <option>crystal</option>
-                <option>csharp</option>
-                <option value="css-extras">css</option>
-                <option>d</option>
-                <option>dart</option>
-                <option>diff</option>
-                <option>docker</option>
-                <option>eiffel</option>
-                <option>elixir</option>
-                <option>erlang</option>
-                <option>fortran</option>
-                <option>fsharp</option>
-                <option>gherkin</option>
-                <option>git</option>
-                <option>glsl</option>
-                <option>go</option>
-                <option>graphql</option>
-                <option>groovy</option>
-                <option>haml</option>
-                <option>handlebars</option>
-                <option>haskell</option>
-                <option>haxe</option>
-                <option value="markup">html</option>
-                <option>http</option>
-                <option>icon</option>
-                <option>inform7</option>
-                <option>ini</option>
-                <option>j</option>
-                <option>jade</option>
-                <option>java</option>
-                <option>javascript</option>
-                <option>jolie</option>
-                <option>json</option>
-                <option>julia</option>
-                <option>keyman</option>
-                <option>kotlin</option>
-                <option>latex</option>
-                <option>less</option>
-                <option>livescript</option>
-                <option>lolcode</option>
-                <option>lua</option>
-                <option>makefile</option>
-                <option>markdown</option>
-                <option>matlab</option>
-                <option>mel</option>
-                <option>mizar</option>
-                <option>monkey</option>
-                <option>nasm</option>
-                <option>nginx</option>
-                <option>nim</option>
-                <option>nix</option>
-                <option>nsis</option>
-                <option>objectivec</option>
-                <option>ocaml</option>
-                <option>oz</option>
-                <option>parigp</option>
-                <option>parser</option>
-                <option>pascal</option>
-                <option>perl</option>
-                <option value="php-extras">php</option>
-                <option>powershell</option>
-                <option>processing</option>
-                <option>prolog</option>
-                <option>properties</option>
-                <option>protobuf</option>
-                <option>puppet</option>
-                <option>pure</option>
-                <option>python</option>
-                <option>q</option>
-                <option>qore</option>
-                <option>r</option>
-                <option>jsx</option>
-                <option>reason</option>
-                <option>rest</option>
-                <option>rip</option>
-                <option>roboconf</option>
-                <option>ruby</option>
-                <option>rust</option>
-                <option>sas</option>
-                <option>sass</option>
-                <option>scss</option>
-                <option>scala</option>
-                <option>scheme</option>
-                <option value="bash">shell</option>
-                <option>smalltalk</option>
-                <option>smarty</option>
-                <option>sql</option>
-                <option>stylus</option>
-                <option value="markup">svg</option>
-                <option>swift</option>
-                <option>tcl</option>
-                <option>textile</option>
-                <option>twig</option>
-                <option>typescript</option>
-                <option>vbnet</option>
-                <option>verilog</option>
-                <option>vhdl</option>
-                <option>vim</option>
-                <option>wiki</option>
-                <option value="markup">xml</option>
-                <option>xojo</option>
-                <option>yaml</option>
-            </optgroup>
-        </select></div>
-    </div>
-    <input type="hidden" id="R" value="1">
-    <div class="submit" data-shortcut="Ctrl+Enter">
-        <input type="submit" value="Submit">
-    </div>
-</aside>
+    <aside>
+        <a href="/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
+        <h4>qbin</h4>
+        <div class="buttons">
+            <div data-shortcut="Ctrl+E" title="Expiration"><img src="$$path$$/assets/icons/calendar-alt.svg" alt="Expiration:"> <select id="E">
+                <option value="30m">30 mins</option>
+                <option value="24h">24 hours</option>
+                <option value="14d" selected>14 days</option>
+                <option value="0">never</option>
+            </select></div>
+            <div data-shortcut="Ctrl+S" title="Syntax Highlighting"><img src="$$path$$/assets/icons/code.svg" alt="Syntax Highlighting:"> <select id="S">
+                <optgroup label="General">
+                    <option value="none">No Highlighting</option>
+                    <option value="markdown!">Markdown Render</option>
+                </optgroup>
+                <optgroup label="Programming" id="syntax-programming">
+                    <option value="cpp">C/C++</option>
+                    <option value="csharp">C#</option>
+                    <option value="go">Go</option>
+                    <option value="java">Java</option>
+                    <option value="lua">Lua</option>
+                    <option value="php-extras">PHP</option>
+                    <option value="sql">SQL</option>
+                </optgroup>
+                <optgroup label="Web" id="syntax-web">
+                    <option value="markup">HTML/XML/SVG/...</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="css-extras">CSS</option>
+                </optgroup>
+                <optgroup label="Scripting" id="syntax-scripting">
+                    <option value="batch">Batch</option>
+                    <option value="powershell">PowerShell</option>
+                    <option value="bash">Shell Script/Bash</option>
+                </optgroup>
+                <optgroup label="Configuration" id="syntax-configuration">
+                    <option value="apacheconf">Apache Config</option>
+                    <option value="nginx">nginx Config</option>
+                    <option value="docker">Dockerfile</option>
+                    <option value="makefile">Makefile</option>
+                    <option value="yaml">YAML</option>
+                </optgroup>
+                <optgroup label="All Languages">
+                    <option>abap</option>
+                    <option>actionscript</option>
+                    <option>ada</option>
+                    <option>apacheconf</option>
+                    <option>apl</option>
+                    <option>applescript</option>
+                    <option>asciidoc</option>
+                    <option>aspnet</option>
+                    <option>autoit</option>
+                    <option>autohotkey</option>
+                    <option>bash</option>
+                    <option>basic</option>
+                    <option>batch</option>
+                    <option>bison</option>
+                    <option>brainfuck</option>
+                    <option>bro</option>
+                    <option value="clike">c</option>
+                    <option>coffeescript</option>
+                    <option>cpp</option>
+                    <option>crystal</option>
+                    <option>csharp</option>
+                    <option value="css-extras">css</option>
+                    <option>d</option>
+                    <option>dart</option>
+                    <option>diff</option>
+                    <option>docker</option>
+                    <option>eiffel</option>
+                    <option>elixir</option>
+                    <option>erlang</option>
+                    <option>fortran</option>
+                    <option>fsharp</option>
+                    <option>gherkin</option>
+                    <option>git</option>
+                    <option>glsl</option>
+                    <option>go</option>
+                    <option>graphql</option>
+                    <option>groovy</option>
+                    <option>haml</option>
+                    <option>handlebars</option>
+                    <option>haskell</option>
+                    <option>haxe</option>
+                    <option value="markup">html</option>
+                    <option>http</option>
+                    <option>icon</option>
+                    <option>inform7</option>
+                    <option>ini</option>
+                    <option>j</option>
+                    <option>jade</option>
+                    <option>java</option>
+                    <option>javascript</option>
+                    <option>jolie</option>
+                    <option>json</option>
+                    <option>julia</option>
+                    <option>keyman</option>
+                    <option>kotlin</option>
+                    <option>latex</option>
+                    <option>less</option>
+                    <option>livescript</option>
+                    <option>lolcode</option>
+                    <option>lua</option>
+                    <option>makefile</option>
+                    <option>markdown</option>
+                    <option>matlab</option>
+                    <option>mel</option>
+                    <option>mizar</option>
+                    <option>monkey</option>
+                    <option>nasm</option>
+                    <option>nginx</option>
+                    <option>nim</option>
+                    <option>nix</option>
+                    <option>nsis</option>
+                    <option>objectivec</option>
+                    <option>ocaml</option>
+                    <option>oz</option>
+                    <option>parigp</option>
+                    <option>parser</option>
+                    <option>pascal</option>
+                    <option>perl</option>
+                    <option value="php-extras">php</option>
+                    <option>powershell</option>
+                    <option>processing</option>
+                    <option>prolog</option>
+                    <option>properties</option>
+                    <option>protobuf</option>
+                    <option>puppet</option>
+                    <option>pure</option>
+                    <option>python</option>
+                    <option>q</option>
+                    <option>qore</option>
+                    <option>r</option>
+                    <option>jsx</option>
+                    <option>reason</option>
+                    <option>rest</option>
+                    <option>rip</option>
+                    <option>roboconf</option>
+                    <option>ruby</option>
+                    <option>rust</option>
+                    <option>sas</option>
+                    <option>sass</option>
+                    <option>scss</option>
+                    <option>scala</option>
+                    <option>scheme</option>
+                    <option value="bash">shell</option>
+                    <option>smalltalk</option>
+                    <option>smarty</option>
+                    <option>sql</option>
+                    <option>stylus</option>
+                    <option value="markup">svg</option>
+                    <option>swift</option>
+                    <option>tcl</option>
+                    <option>textile</option>
+                    <option>twig</option>
+                    <option>typescript</option>
+                    <option>vbnet</option>
+                    <option>verilog</option>
+                    <option>vhdl</option>
+                    <option>vim</option>
+                    <option>wiki</option>
+                    <option value="markup">xml</option>
+                    <option>xojo</option>
+                    <option>yaml</option>
+                </optgroup>
+            </select></div>
+        </div>
+        <input type="hidden" id="R" value="1">
+        <div class="submit" data-shortcut="Ctrl+Enter">
+            <input type="submit" value="Submit">
+        </div>
+    </aside>
 
-<div id="content" data-shortcut="Ctrl+Space">
-    <textarea id="Q" required spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" maxlength="1048576" class="CodeFlask__textarea" autofocus>$$if_fork$$$$content$$$$/if_fork$$</textarea>
-    <div class="placeholder"><div>
-        <strong>A minimalist pastebin service. Paste your code, or write some!</strong><br>
-        We also support &amp; render Markdown!<br>
-        <br>
-        You may also:<br>
-        <ul>
-            <li>Hold <b>Ctrl+V</b> to submit clipboard contents immediately</li>
-            <li>Drop text or a file here to insert it</li>
-            <li>Hold <b>Ctrl</b> to see all available keyboard shortcuts</li>
-            <li>Submit command output from any shell with <a><b onclick="selectText(this)">&nbsp;| nc qbin.io 90</b></a><br><small>(pro-tip: click that text, then click the scroll wheel in your terminal to paste)</small></li>
-        </ul><br>
-        By submitting any content to qbin.io, you accept and confirm that your document complies with our <a href="$$path$$/guidelines">guidelines</a>.<br><br>
+    <div id="content" data-shortcut="Ctrl+Space">
+        <textarea id="Q" required spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" maxlength="1048576" class="CodeFlask__textarea" autofocus>$$if_fork$$$$content$$$$/if_fork$$</textarea>
+        <div class="placeholder"><div>
+            <strong>A minimalist pastebin service. Paste your code, or write some!</strong><br>
+            We also support &amp; render Markdown!<br>
+            <br>
+            You may also:<br>
+            <ul>
+                <li>Hold <b>Ctrl+V</b> to submit clipboard contents immediately</li>
+                <li>Drop text or a file here to insert it</li>
+                <li>Hold <b>Ctrl</b> to see all available keyboard shortcuts</li>
+                <li>Submit command output from any shell with <a><b onclick="selectText(this)">&nbsp;| nc qbin.io 90</b></a><br><small>(pro-tip: click that text, then click the scroll wheel in your terminal to paste)</small></li>
+            </ul><br>
+            By submitting any content to qbin.io, you accept and confirm that your document complies with our <a href="$$path$$/guidelines">guidelines</a>.<br><br>
 
-        <strong>Using qbin often? You should consider <a href="https://liberapay.com/qbin/" target="_BLANK">donating on Liberapay</a>.</strong><br>
-        » <a href="http://qbin-io.viewdocs.io/qbin/api/" target="_BLANK">API documentation</a><br>
-        » <a href="https://github.com/qbin-io/qbin">Source on GitHub</a><br>
-        » <a href="https://github.com/qbin-io/qbin/issues/new">Report an issue</a><br><br>
-    </div></div>
-</div>
+            <strong>Using qbin often? You should consider <a href="https://liberapay.com/qbin/" target="_BLANK">donating on Liberapay</a>.</strong><br>
+            » <a href="http://qbin-io.viewdocs.io/qbin/api/" target="_BLANK">API documentation</a><br>
+            » <a href="https://github.com/qbin-io/qbin">Source on GitHub</a><br>
+            » <a href="https://github.com/qbin-io/qbin/issues/new">Report an issue</a><br><br>
+        </div></div>
+    </div>
 
 </form>
 
