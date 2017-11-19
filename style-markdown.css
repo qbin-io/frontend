@@ -57,12 +57,13 @@
 .markdown pre,
 .markdown code {
   font-family: "Fira Mono", monospace;
+  font-size: 0.95em;
   border-radius: 3px;
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
   background: #eae6e4 !important;
-  padding: 3px 4px !important;
+  padding: 2px 4px !important;
   margin: 0;
 }
 .markdown pre {
