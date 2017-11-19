@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Assistant:400,600");
+@import url("https://fonts.googleapis.com/css?family=Assistant:400,600|Fira+Mono:400,600");
 * {
   box-sizing: border-box;
 }
@@ -244,13 +244,14 @@ body>main #content>pre .line-numbers-rows {
 }
 #content {
   flex-grow: 1;
-  font-family: "Input Mono Nar Reg", monospace;
+  font-family: "Fira Mono", monospace;
   background: #fff;
   overflow-y: auto;
 }
 #content>textarea,
 #content>pre,
 #content>pre>code {
+  font-family: "Fira Mono" !important;
   font-size: 16px;
 }
 #content>pre {

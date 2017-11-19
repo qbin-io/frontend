@@ -54,9 +54,9 @@
 .markdown a:visited {
   color: #08f;
 }
-.markdown #content pre,
-.markdown #content code {
-  font-family: "Input Mono Nar Reg", monospace;
+.markdown pre,
+.markdown code {
+  font-family: "Fira Mono", monospace;
   border-radius: 3px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -65,11 +65,11 @@
   padding: 3px 4px !important;
   margin: 0;
 }
-.markdown #content pre {
+.markdown pre {
   padding: 15px !important;
   overflow: auto;
 }
-.markdown #content pre>code {
+.markdown pre>code {
   padding: 0 !important;
   background: transparent;
 }
