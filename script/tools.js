@@ -1,7 +1,7 @@
 // Remove duplicate scrollbar while still letting the placeholder scroll.
 $("Q").addEventListener("input", (event) => {
-    if ($("Q").value != "") $("content").setAttribute("style", "overflow: hidden");
-    else $("content").removeAttribute("style");
+    if ($("Q").value != "") setTimeout(() => $("content").setAttribute("style", "overflow: hidden"));
+    else setTimeout(() => $("content").removeAttribute("style"));
 });
 
 // Warn when leaving with unsubmitted changes.
