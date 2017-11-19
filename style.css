@@ -37,7 +37,7 @@ body>*>aside,
   user-select: none;
 }
 .placeholder .selectable,
-.placeholder .select-on-click,
+.placeholder b.selectable,
 body>*>aside h4.selectable,
 body>main #content {
   pointer-events: auto;
