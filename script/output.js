@@ -20,10 +20,19 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
         if (document.querySelector("h4").classList.contains("selected")) document.querySelector("h4").classList.remove("selected");
     }
 
+    // h4 selected but also content → deselect h4/.info
     if (window.getSelection().containsNode(document.querySelector("#content>*"), true)) {
         const range = window.getSelection().rangeCount && window.getSelection().getRangeAt(0);
-        if (range && window.getSelection().containsNode(document.querySelector("h4"), true)) {
+        if (range && window.getSelection().containsNode(document.querySelector(".info"), true)) {
             range.setStartAfter(document.querySelector("h4"));
+        }
+    // h4 selected, but not completely → completely select h4
+    } else if (window.getSelection().containsNode(document.querySelector("h4"), true)) {
+        const range = window.getSelection().rangeCount && window.getSelection().getRangeAt(0);
+        const el = document.querySelector("h4");
+        if (!isFullySelected(el, range)) {
+            range.setStartBefore(el.firstChild);
+            range.setEndAfter(el.lastChild);
         }
     }
 
@@ -32,13 +41,32 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
 // Make selectable because we can control the range using JavaScript
 document.querySelector("h4").classList.add("selectable");
 
+function hasAsParent(e, p) {
+    while (e != p && e) e = e.parentElement;
+    return e == p;
+}
+
+function isFullySelected(el, range) {
+    return (
+        (hasAsParent(range.startContainer, el))
+     && (range.startOffset == 0)
+     && (hasAsParent(range.endContainer, el))
+     && (range.endOffset >= el.lastChild.textContent.length));
+}
+
 function selectText(el) {
     if (!el) return window.getSelection().removeAllRanges();
     const selection = window.getSelection();
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    selection.removeAllRanges();
-    selection.addRange(range);
+    if (selection.rangeCount > 0) {
+        const range = selection.getRangeAt(0);
+        range.setStartBefore(el.firstChild);
+        range.setEndAfter(el.lastChild);
+    } else {
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
 }
 
 function selectLink(instant) {

@@ -85,8 +85,11 @@ body>*>aside
         font-size: 13px; font-weight: inherit
     h4 em
         font-style: normal; color: rgba(0,0,0,0.5);
-    h4 small
-        font-size: 0; display: inline-block; width: 0
+    h4 small // Text only used for pasting
+        // Do everything to hide this and make it a piece of nothing to the user
+        color: transparent; pointer-events: none; letter-spacing: -0.5em; width: 0
+        transform-origin: 0 105%; transform: scale(0.01); // Fix mobile selection UI
+        display: inline-block
 
     @media (max-width: 600px)
         h4 em
