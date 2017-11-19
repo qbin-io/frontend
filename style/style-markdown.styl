@@ -1,79 +1,106 @@
-.markdown { padding: 1em 1em 5em; margin: 0 auto; max-width: 900px; font-family: Assistant, sans-serif; font-size: 18px; line-height: 1.6; }
+.markdown
+    padding: 1em 1em 5em
+    margin: 0 auto
+    max-width: 900px
+    font-family: Assistant, sans-serif
+    font-size: 18px
+    line-height: 1.6
 
-/* Headlines */
-.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 { font-weight: Bold; line-height: 1.1; margin: 25px 0 10px; }
-.markdown h1 { font-size: 3em; }
-.markdown h2 { font-size: 2.4em; }
-.markdown h3 { font-size: 1.9em; }
-.markdown h4 { font-size: 1.5em; }
-.markdown h5 { font-size: 1.2em; }
-.markdown h6 { font-size: 1.0em; }
+    // Headlines
+    h1, h2, h3, h4, h5, h6
+        font-weight: bold
+        line-height: 1.1
+        margin: 25px 0 10px
+    h1 { font-size: 2.25em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.35em; }
+    h5 { font-size: 1.2em; }
+    h6 { font-size: 1.05em; }
 
-/* Element margins */
-.markdown p, .markdown pre, .markdown table, .markdown ul, .markdown ol, .markdown blockquote { margin: 10px 0 25px }
+    // Element margins
+    p, pre, table, ul, ol, blockquote { margin: 10px 0 25px; }
 
-/* Inline elements */
-.markdown a { color: #08f; text-decoration: underline; cursor: pointer; }
-@media not print { .markdown a:visited { color: #08f; }}
-.markdown table caption { color: #444; font-style: italic; font-size: 0.9em; }
+    /* Inline elements */
+    a
+        color: #08f
+        text-decoration: underline
+        cursor: pointer
+        &:visited
+            color: #08f
 
-/* Code */
-#content .markdown pre, #content .markdown code {
-    font-family: "Input Mono Nar Reg", monospace; border-radius: 3px;
-    white-space: pre-wrap; word-wrap: break-word; word-break: break-all;
-    background: #EAE6E4 !important;
-    padding: 3px 4px !important;
-    margin: 0;
-}
-#content .markdown pre { padding: 15px !important; overflow: auto; }
-#content .markdown pre>code { padding: 0 !important; background: transparent; }
+    /* Code */
+    #content pre, #content code {
+        font-family: "Input Mono Nar Reg", monospace; border-radius: 3px;
+        white-space: pre-wrap; word-wrap: break-word; word-break: break-all;
+        background: #EAE6E4 !important;
+        padding: 3px 4px !important;
+        margin: 0;
+    }
+    #content pre { padding: 15px !important; overflow: auto; }
+    #content pre>code { padding: 0 !important; background: transparent; }
 
-/* Block elements */
-.markdown img:not(.inline) { display: block; width: 100%; }
+    /* Block elements */
+    img:not(.inline) { display: block; width: 100%; }
 
-/* Paragraphs */
-.markdown p { margin: 10px 0 25px; }
-.markdown p:last-child { margin-bottom: 10px; }
-.markdown blockquote { border-left: 5px solid #EAE6E4; margin-left: 15px; padding: 1px 15px; color: #444; }
-.markdown hr { border: none; outline: none; height: 5px; background: #EAE6E4; }
+    /* Paragraphs */
+    p { margin: 10px 0 25px; }
+    p:last-child { margin-bottom: 10px; }
+    blockquote { border-left: 5px solid #EAE6E4; margin-left: 15px; padding: 1px 15px; color: #444; }
+    hr { border: none; outline: none; height: 5px; background: #EAE6E4; }
 
-/* Lists */
-.markdown ul, .markdown ol { padding: 0; padding-left: 1em; }
-.markdown ul ul, .markdown ul ol, .markdown ol ul, .markdown ol ol { margin: 0; } /* Nested lists */
-.markdown ul { list-style: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 4' width='6' height='8'><circle cx='1' cy='1' r='1' fill='#181818'/></svg>"); } /* A bit of a smaller bullet */
-.markdown ol { list-style: decimal; }
+    // Lists
+    ul, ol { padding: 0; padding-left: 1em; }
+    ul ul, ul ol, ol ul, ol ol { margin: 0; } // Nested lists
+    ul { list-style: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 4' width='6' height='8'><circle cx='1' cy='1' r='1' fill='#181818'/></svg>"); } // A bit of a smaller bullet
+    ol { list-style: decimal; }
 
-/* Tables */
-.markdown .table { overflow-y: hidden; overflow-x: auto; padding: 0 2px; word-break: break-all; } /* Responsive Tables: <div class="table"><table>...</table></div> */
-.markdown table { border-collapse: collapse; min-width: 100%; }
-.markdown table td, .markdown table th { border: 3px solid #EAE6E4; padding: 6px; text-align: left; }
-.markdown table tbody tr:nth-child(even) td { background: #f5f3f2; }
-.markdown table th { background: #EAE6E4; }
-.markdown table caption { text-align: left; caption-side: bottom; }
+    // Tables
+    .table // Responsive Tables: <div class="table"><table>...</table></div>
+        overflow-y: hidden; overflow-x: auto
+        padding: 0 2px
+        word-break: break-all
+    table
+        border-collapse: collapse
+        min-width: 100%
+        td, th
+            border: 3px solid #EAE6E4
+            padding: 6px
+            text-align: left
+        tbody tr:nth-child(even) td
+            background: #f5f3f2
+        th
+            background: #EAE6E4
+        caption
+            text-align: left
+            caption-side: bottom
+            color: #444
+            font-style: italic
+            font-size: 0.9em
 
-/* Report Form */
-.markdown input, .markdown textarea
-    display: block
-    width: 100%
-    border: none 
-    background: #f5f3f2
-    padding: 10px 15px
-    border-radius: 3px
-    font: inherit
-    color: #000
-    
-    &:hover
-        background: #F0EDEB
-    &:focus
+    // Report Form
+    input, textarea
+        display: block
+        width: 100%
+        border: none 
+        background: #f5f3f2
+        padding: 10px 15px
+        border-radius: 3px
+        font: inherit
+        color: #000
+        
+        &:hover
+            background: #F0EDEB
+        &:focus
+            background: #EAE6E4
+
+    input[type="submit"]
         background: #EAE6E4
+        float: right
+        width: 200px
+        cursor: pointer
 
-.markdown input[type="submit"]
-    background: #EAE6E4
-    float: right
-    width: 200px
-    cursor: pointer
-
-    &:hover
-        background: #E5E0DD
-    &:focus
-        background: #dfd9d6
+        &:hover
+            background: #E5E0DD
+        &:focus
+            background: #dfd9d6

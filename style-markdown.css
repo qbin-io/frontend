@@ -5,37 +5,39 @@
   font-family: Assistant, sans-serif;
   font-size: 18px;
   line-height: 1.6;
+/* Inline elements */
+/* Code */
+/* Block elements */
+/* Paragraphs */
 }
-/* Headlines */
 .markdown h1,
 .markdown h2,
 .markdown h3,
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  font-weight: Bold;
+  font-weight: bold;
   line-height: 1.1;
   margin: 25px 0 10px;
 }
 .markdown h1 {
-  font-size: 3em;
+  font-size: 2.25em;
 }
 .markdown h2 {
-  font-size: 2.4em;
+  font-size: 1.8em;
 }
 .markdown h3 {
-  font-size: 1.9em;
+  font-size: 1.5em;
 }
 .markdown h4 {
-  font-size: 1.5em;
+  font-size: 1.35em;
 }
 .markdown h5 {
   font-size: 1.2em;
 }
 .markdown h6 {
-  font-size: 1em;
+  font-size: 1.05em;
 }
-/* Element margins */
 .markdown p,
 .markdown pre,
 .markdown table,
@@ -44,25 +46,16 @@
 .markdown blockquote {
   margin: 10px 0 25px;
 }
-/* Inline elements */
 .markdown a {
   color: #08f;
   text-decoration: underline;
   cursor: pointer;
 }
-@media not print {
-  .markdown a:visited {
-    color: #08f;
-  }
+.markdown a:visited {
+  color: #08f;
 }
-.markdown table caption {
-  color: #444;
-  font-style: italic;
-  font-size: 0.9em;
-}
-/* Code */
-#content .markdown pre,
-#content .markdown code {
+.markdown #content pre,
+.markdown #content code {
   font-family: "Input Mono Nar Reg", monospace;
   border-radius: 3px;
   white-space: pre-wrap;
@@ -72,20 +65,18 @@
   padding: 3px 4px !important;
   margin: 0;
 }
-#content .markdown pre {
+.markdown #content pre {
   padding: 15px !important;
   overflow: auto;
 }
-#content .markdown pre>code {
+.markdown #content pre>code {
   padding: 0 !important;
   background: transparent;
 }
-/* Block elements */
 .markdown img:not(.inline) {
   display: block;
   width: 100%;
 }
-/* Paragraphs */
 .markdown p {
   margin: 10px 0 25px;
 }
@@ -104,7 +95,6 @@
   height: 5px;
   background: #eae6e4;
 }
-/* Lists */
 .markdown ul,
 .markdown ol {
   padding: 0;
@@ -116,22 +106,18 @@
 .markdown ol ol {
   margin: 0;
 }
-/* Nested lists */
 .markdown ul {
   list-style: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 4' width='6' height='8'><circle cx='1' cy='1' r='1' fill='#181818'/></svg>");
 }
-/* A bit of a smaller bullet */
 .markdown ol {
   list-style: decimal;
 }
-/* Tables */
 .markdown .table {
   overflow-y: hidden;
   overflow-x: auto;
   padding: 0 2px;
   word-break: break-all;
 }
-/* Responsive Tables: <div class="table"><table>...</table></div> */
 .markdown table {
   border-collapse: collapse;
   min-width: 100%;
@@ -151,8 +137,10 @@
 .markdown table caption {
   text-align: left;
   caption-side: bottom;
+  color: #444;
+  font-style: italic;
+  font-size: 0.9em;
 }
-/* Report Form */
 .markdown input,
 .markdown textarea {
   display: block;
