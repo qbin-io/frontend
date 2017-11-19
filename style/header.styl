@@ -1,7 +1,7 @@
 body>*>aside
     background: #EAE6E4
     color: #444
-    border-bottom: 1px solid rgba(0,0,0,0.2)
+    border-bottom: 1px solid rgba(0,0,0,0.1)
     display: flex; align-items: center; flex: none
     z-index: 10
 
@@ -95,12 +95,13 @@ body>*>aside
             display: none
 
 @media (max-width: 500px)
-    body>form>aside h4
+    body>.always-show-logo>aside h4
         display: none
-    body>main>aside h4
-        margin: 0 12px
-        font-size: 14px
-    body>main>aside>a:first-child
-        display: none
+    body>:not(.always-show-logo)>aside
+        h4
+            margin: 0 12px
+            font-size: 14px
+        &>a:first-child
+            display: none
     
 

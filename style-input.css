@@ -20,9 +20,12 @@
   padding-left: 1.5em;
 }
 .placeholder b {
-  font-family: "Input Mono Nar Reg", monospace;
-  font-size: 15px;
+  font-family: "Fira Mono", monospace;
+  font-size: 0.95em;
   font-weight: normal;
+  color: #222;
+  background: #eae6e4;
+  padding: 2px 4px;
 }
 .placeholder a {
   pointer-events: auto;

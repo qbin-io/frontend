@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="$$path$$/style.css">
 <link rel="stylesheet" href="$$path$$/style-input.css">
 
-<form id="F" action="$$path$$/" method="POST" novalidate style="opacity: 0"><!-- Hide until CSS is loaded -->
+<form id="F" class="always-show-logo" action="$$path$$/" method="POST" novalidate style="opacity: 0"><!-- Hide until CSS is loaded -->
 
 <aside>
     <a href="/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
@@ -186,7 +186,7 @@
 </aside>
 
 <div id="content" data-shortcut="Ctrl+Space">
-    <textarea id="Q" required spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" maxlength="1048576" class="CodeFlask__textarea" autofocus>$$if_fork$$$$content$$$$/if_fork$$</textarea>
+    <textarea id="Q" required spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" maxlength="1048576" class="CodeFlask__textarea" autofocus>$$if_fork$$$$content$$$$/if_fork$$</textarea>
     <div class="placeholder"><div>
         <strong>A minimalist pastebin service. Paste your code, or write some!</strong><br>
         We also support &amp; render Markdown!<br>
