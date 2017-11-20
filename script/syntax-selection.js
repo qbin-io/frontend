@@ -9,42 +9,42 @@
     });
 });
 
+// Cursor direction mapping.
+// This could be done using a function, but that function would be a lot
+// longer than this and not produce results as user-friendly as this.
+const cursorMap = {};
+const fnNext = e => e.nextElementSibling;
+const fnNextNext = e => e.nextElementSibling.nextElementSibling;
+const fnPrev = e => e.previousElementSibling;
+const fnPrevPrev = e => e.previousElementSibling.previousElementSibling;
+
+cursorMap["cpp"] = ["search", fnNext, fnNextNext, "batch"];
+cursorMap["csharp"] = ["search", "batch", fnNextNext, fnPrev];
+cursorMap["go"] = [fnPrevPrev, fnNext, fnNextNext, "powershell"];
+cursorMap["java"] = [fnPrevPrev, "powershell", fnNextNext, fnPrev];
+cursorMap["lua"] = [fnPrevPrev, fnNext, fnNextNext, "bash"];
+cursorMap["php-extras"] = [fnPrevPrev, "bash", "markup", fnPrev];
+cursorMap["sql"] = [fnPrevPrev, "apacheconf", "markup", "bash"];
+
+cursorMap["markup"] = ["sql", "nginx", fnNext, "nginx"];
+cursorMap["javascript"] = [fnPrev, "docker", fnNext, "docker"];
+cursorMap["css-extras"] = [fnPrev, "makefile", "none", "makefile"];
+
+cursorMap["batch"] = ["search", "cpp", fnNext, "csharp"];
+cursorMap["powershell"] = [fnPrev, "go", fnNext, "java"];
+cursorMap["bash"] = [fnPrev, "lua", "apacheconf", "php-extras"];
+
+cursorMap["apacheconf"] = ["bash", "markup", fnNext, "sql"];
+cursorMap["nginx"] = [fnPrev, "markup", fnNext, "markup"];
+cursorMap["docker"] = [fnPrev, "javascript", fnNext, "javascript"];
+cursorMap["makefile"] = [fnPrev, "css-extras", fnNext, "css-extras"];
+cursorMap["yaml"] = [fnPrev, "css-extras", "markdown!", "css-extras"];
+
+cursorMap["search"] = ["none", null, "cpp", null];
+cursorMap["none"] = ["css-extras", "markdown!", "search", "markdown!"];
+cursorMap["markdown!"] = ["yaml", "none", "search", "none"];
+
 window.syntaxSelection = function syntaxSelection() {
-
-    // Cursor direction mapping.
-    // This could be done using a function, but that function would be a lot
-    // longer than this and not produce results as user-friendly as this.
-    const cursorMap = {};
-    const fnNext = e => e.nextElementSibling;
-    const fnNextNext = e => e.nextElementSibling.nextElementSibling;
-    const fnPrev = e => e.previousElementSibling;
-    const fnPrevPrev = e => e.previousElementSibling.previousElementSibling;
-
-    cursorMap["cpp"] = ["search", fnNext, fnNextNext, "batch"];
-    cursorMap["csharp"] = ["search", "batch", fnNextNext, fnPrev];
-    cursorMap["go"] = [fnPrevPrev, fnNext, fnNextNext, "powershell"];
-    cursorMap["java"] = [fnPrevPrev, "powershell", fnNextNext, fnPrev];
-    cursorMap["lua"] = [fnPrevPrev, fnNext, fnNextNext, "bash"];
-    cursorMap["php-extras"] = [fnPrevPrev, "bash", "markup", fnPrev];
-    cursorMap["sql"] = [fnPrevPrev, "apacheconf", "markup", "bash"];
-
-    cursorMap["markup"] = ["sql", "nginx", fnNext, "nginx"];
-    cursorMap["javascript"] = [fnPrev, "docker", fnNext, "docker"];
-    cursorMap["css-extras"] = [fnPrev, "makefile", "none", "makefile"];
-
-    cursorMap["batch"] = ["search", "cpp", fnNext, "csharp"];
-    cursorMap["powershell"] = [fnPrev, "go", fnNext, "java"];
-    cursorMap["bash"] = [fnPrev, "lua", "apacheconf", "php-extras"];
-
-    cursorMap["apacheconf"] = ["bash", "markup", fnNext, "sql"];
-    cursorMap["nginx"] = [fnPrev, "markup", fnNext, "markup"];
-    cursorMap["docker"] = [fnPrev, "javascript", fnNext, "javascript"];
-    cursorMap["makefile"] = [fnPrev, "css-extras", fnNext, "css-extras"];
-    cursorMap["yaml"] = [fnPrev, "css-extras", "markdown!", "css-extras"];
-
-    cursorMap["search"] = ["none", null, "cpp", null];
-    cursorMap["none"] = ["css-extras", "markdown!", "search", "markdown!"];
-    cursorMap["markdown!"] = ["yaml", "none", "search", "none"];
 
     [...document.querySelectorAll(".syntax-selection [data-value], #syntax-search")].forEach((e) => {
         e.addEventListener("keydown", (event) => {

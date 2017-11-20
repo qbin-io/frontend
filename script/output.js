@@ -23,7 +23,7 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
     // h4 selected but also content → deselect h4/.info
     if (window.getSelection().containsNode(document.querySelector("#content>*"), true)) {
         const range = window.getSelection().rangeCount && window.getSelection().getRangeAt(0);
-        if (range && window.getSelection().containsNode(document.querySelector(".info"), true)) {
+        if (range && window.getSelection().containsNode(document.querySelector("h4"), true)) {
             range.setStartAfter(document.querySelector("h4"));
         }
     // h4 selected, but not completely → completely select h4
