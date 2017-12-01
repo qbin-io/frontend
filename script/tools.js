@@ -16,16 +16,16 @@ window.addEventListener("keydown", (event) => {
 
 // Keep track of submitting.
 function submitForm() {
-    $("Q").disabled = window.isSubmitted = true;
+    $("Q").readonly = window.isSubmitted = true;
     localStorage.justSubmitted = Date.now();
     $("F").submit();
 }
 $("F").addEventListener("submit", (event) => {
-    $("Q").disabled = window.isSubmitted = true;
+    $("Q").readonly = window.isSubmitted = true;
     localStorage.justSubmitted = Date.now();
 });
 window.addEventListener("unload", () => {
-    $("Q").disabled = window.isSubmitted = false;
+    $("Q").readonly = window.isSubmitted = false;
 })
 
 // Insert text at the current cursor position.
