@@ -6,7 +6,7 @@ html {
   font-family: Assistant, sans-serif;
 }
 body {
-  background: #f8f8f8;
+  background: #fff;
 }
 html,
 body,
@@ -29,7 +29,8 @@ a {
 }
 main,
 body>*>aside,
-.placeholder>div {
+.placeholder>div,
+.line-number {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -232,8 +233,38 @@ body>*>aside h4 small {
   color: inherit;
 }
 #content>pre.line-numbers > code {
-  display: inline-block;
+  display: block;
   white-space: inherit;
+  position: relative;
+  counter-reset: line;
+}
+#content>pre.line-numbers > code .line-number:before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  position: absolute;
+  right: 100%;
+  margin-right: 10px;
+  color: rgba(0,0,0,0.25);
+}
+.selectable-lines .line-number:before {
+  cursor: pointer;
+}
+.line-highlight.lh-top:before {
+  margin-top: -1px;
+  border-top: 1px solid #ffc891;
+}
+.line-highlight.lh-bot:before {
+  border-bottom: 1px solid #ffc891;
+}
+.line-highlight:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -4em;
+  right: -1em;
+  background: #fed;
+  z-index: -1;
 }
 #content>pre {
   background: transparent !important;
@@ -249,7 +280,6 @@ body>main #content>pre .line-numbers-rows {
 #content {
   flex-grow: 1;
   font-family: "Fira Mono", monospace;
-  background: #fff;
   overflow-y: auto;
 }
 #content>textarea,
@@ -259,7 +289,7 @@ body>main #content>pre .line-numbers-rows {
   font-size: 16px;
 }
 #content>pre {
-  padding-left: 3.8em !important;
+  padding-left: 4em !important;
   width: auto;
   right: 0;
 }

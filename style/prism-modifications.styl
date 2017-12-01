@@ -4,8 +4,33 @@
 
 /* Prism Soft Wrap for Line Numbers (https://github.com/PrismJS/prism/pull/584) */
 #content>pre.line-numbers > code
-    display: inline-block
+    display: block
     white-space: inherit
+    position: relative
+    counter-reset: line
+#content>pre.line-numbers > code .line-number:before
+    counter-increment: line
+    content: counter(line)
+    display: inline-block
+    position: absolute; right: 100%
+    margin-right: 10px;
+    color: rgba(0,0,0,0.25)
+.selectable-lines .line-number:before
+    cursor: pointer
+
+.line-highlight
+    &.lh-top:before
+        margin-top: -1px
+        border-top: 1px solid #ffc891
+    &.lh-bot:before
+        border-bottom: 1px solid #ffc891
+    &:before
+        content: ""
+        display: block
+        position: absolute; left: -4em; right: -1em
+        background: #ffeedd
+        z-index: -1
+
 
 /* Prism reset */
 #content>pre
