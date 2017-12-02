@@ -38,7 +38,7 @@ body,
   user-select: none;
 }
 .selectable,
-#content>pre>code {
+#content>pre {
   pointer-events: auto;
   -webkit-touch-callout: default;
   -webkit-user-select: text;
@@ -299,11 +299,13 @@ body>main #content>pre .line-numbers-rows {
   padding-left: 4em !important;
   width: auto;
   right: 0;
+  min-height: 100%;
 }
 #content>textarea {
   height: 100%;
   border: none;
   padding: 15px;
+  z-index: 10;
 }
 #content:not(.CodeFlask)>textarea {
   -webkit-text-fill-color: #000 !important;
