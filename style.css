@@ -47,6 +47,13 @@ body,
   -ms-user-select: text;
   user-select: text;
 }
+.select-all {
+  -webkit-user-select: all;
+  -khtml-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
 h4.selected:after {
   content: "Ctrl+C to copy";
   background: #f5f3f2;
