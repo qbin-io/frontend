@@ -17,10 +17,14 @@ window.addEventListener("drop", (event) => {
 window.addEventListener("paste", (event) => {
     $("Q").focus();
     setShortcutsVisible(false);
-    // Hold paste to submit instantly (TODO: check compatibility with pasting from the right-click menu)
-    if (window.isPasting) { event.preventDefault(); return submitForm(); }
-    window.isPasting = $("Q").value == "";
-})
+    // Hold paste to submit instantly
+    if (window.isPasting === true) { event.preventDefault(); return submitForm(); }
+    if (window.isPasting === false) window.isPasting = true; // null: can't paste right now
+});
+window.addEventListener("keydown", (event) => {
+    console.log(event.keyCode, event.ctrlKey);
+    if (event.keyCode == 86 /* V */ && event.ctrlKey && window.isPasting !== true) window.isPasting = false;
+});
 window.addEventListener("keyup", (event) => {
-    if (event.keyCode == 86 /* V */ || !event.ctrlKey) window.isPasting = false;
- });
+    if (event.keyCode == 86 /* V */ || !event.ctrlKey) window.isPasting = null;
+});
