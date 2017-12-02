@@ -14,10 +14,14 @@
     date.setUTCMinutes(time.length >= 6 ? parseInt(time[5], 10) : parseInt(time[2], 10));
     if ((time.length == 4 && time[3] !== undefined) || (time.length == 7 && time[6] !== undefined)) {
         date.setUTCSeconds(time.length == 7 ? parseInt(time[6], 10) : parseInt(time[3], 10));
+    } else {
+        date.setUTCSeconds(0);
     }
 
     let timeString = (time.length >= 6 ? date.toLocaleDateString() + " " : "") + date.toLocaleTimeString();
-    if (time.length != 4 && time.length != 7) timeString = timeString.replace(/:\d+(?=\s|$)/, "");
+    if (!(time.length == 4 && time[3] !== undefined) && !(time.length == 7 && time[6] !== undefined)) {
+        timeString = timeString.replace(/:00(\s|$)/, "$1");
+    }
 
     e[e.getAttribute("data-time-in")] = timeString;
 });

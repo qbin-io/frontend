@@ -7,7 +7,7 @@ let selectableLines = [...document.getElementsByClassName("line-number")];
 let lastClick = -1;
 let lastAction = false;
 function parseHash() {
-    const hash = location.hash.substr(1).split(",").map(x => x.split("-"));
+    const hash = location.hash.substr(1).split(",").filter(x => x.trim().length).map(x => x.split("-"));
     for (let i = 0; i < hash.length; i++) {
         if (hash[i].length > 2 || !hash[i][0].match(/^\d+$/) || (hash[i].length > 1 && !hash[i][1].match(/^\d+$/))) {
             console.warn("Invalid hash segment:", hash[i].join("-"));
@@ -49,7 +49,13 @@ window.addEventListener("click", event => {
             lastClick = n;
         } else {
             lastAction = true;
-            location.hash = lastClick = n;
+            lastClick = n;
+            const hash = parseHash();
+            if (hash.length == 1 && hash[0][0] == n && hash[0][1] == n) {
+                location.hash = "";
+            } else {
+                location.hash = n;
+            }
         }
     }
 })
@@ -97,18 +103,11 @@ function toggleHighlight(n, only) {
 
 // Highlight lines from hash
 function highlightLines(scroll) {
-    const hash = location.hash.substr(1).split(",").map(x => x.split("-"));
+    const hash = parseHash();
     let code = document.querySelector("#content > pre > code").innerHTML;
     for (let i = 0; i < hash.length; i++) {
-        if (hash[i].length > 2 || !hash[i][0].match(/^\d+$/) || (hash[i].length > 1 && !hash[i][1].match(/^\d+$/))) {
-            console.warn("Invalid hash segment:", hash[i].join("-"));
-            hash.splice(i, 1); i--;
-            continue;
-        }
-        if (hash[i].length <= 1) hash[i][1] = hash[i][0]
-
         let n = 0;
-        code = code.replace(/^|(\n)/g, (a) => {
+        code = code.replace(/^/gm, (a) => {
             n++;
             if (n >= hash[i][0] && n <= hash[i][1]) {
                 return a + '<span class="line-highlight' + (n == hash[i][0] ? " lh-top" : "") + (n == hash[i][1] ? " lh-bot" : "") + '"></span>'
@@ -151,7 +150,7 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
     if (window.getSelection().containsNode(document.querySelector("#content>*"), true)) {
         const range = window.getSelection().rangeCount && window.getSelection().getRangeAt(0);
         if (range && window.getSelection().containsNode(document.querySelector("h4"), true)) {
-            range.setStartAfter(document.querySelector("h4"));
+            range.setStartBefore(document.querySelector("#content"));
         }
     // h4 selected, but not completely → completely select h4
     } else if (window.getSelection().containsNode(document.querySelector("h4"), true)) {
@@ -163,7 +162,7 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
         }
     }
 
-}), 10);
+}));
 
 // Make selectable because we can control the range using JavaScript
 document.querySelector("h4").classList.add("selectable");

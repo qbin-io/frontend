@@ -8,10 +8,12 @@
     white-space: inherit
     position: relative
     counter-reset: line
+#content>pre.line-numbers > code .line-number
+    display: inline
 #content>pre.line-numbers > code .line-number:before
     counter-increment: line
     content: counter(line)
-    display: inline-block
+    display: inline
     position: absolute; right: 100%
     margin-right: 10px;
     color: rgba(0,0,0,0.25)
@@ -19,13 +21,14 @@
     cursor: pointer
 
 .line-highlight
+    display: inline
     &.lh-top:before
         margin-top: -1px
         border-top: 1px solid #ffc891
     &.lh-bot:before
         border-bottom: 1px solid #ffc891
     &:before
-        content: ""
+        content: " "
         display: block
         position: absolute; left: -4em; right: -1em
         background: #ffeedd

@@ -27,20 +27,18 @@ body>main {
 a {
   color: #08f;
 }
-main,
-body>*>aside,
-.placeholder>div,
-.line-number {
+body,
+.placeholder,
+.line-number:before,
+.line-highlight:before {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.placeholder .selectable,
-.placeholder b.selectable,
-body>*>aside h4.selectable,
-body>main #content {
+.selectable,
+#content>pre>code {
   pointer-events: auto;
   -webkit-touch-callout: default;
   -webkit-user-select: text;
@@ -238,10 +236,13 @@ body>*>aside h4 small {
   position: relative;
   counter-reset: line;
 }
+#content>pre.line-numbers > code .line-number {
+  display: inline;
+}
 #content>pre.line-numbers > code .line-number:before {
   counter-increment: line;
   content: counter(line);
-  display: inline-block;
+  display: inline;
   position: absolute;
   right: 100%;
   margin-right: 10px;
@@ -249,6 +250,9 @@ body>*>aside h4 small {
 }
 .selectable-lines .line-number:before {
   cursor: pointer;
+}
+.line-highlight {
+  display: inline;
 }
 .line-highlight.lh-top:before {
   margin-top: -1px;
@@ -258,7 +262,7 @@ body>*>aside h4 small {
   border-bottom: 1px solid #ffc891;
 }
 .line-highlight:before {
-  content: "";
+  content: " ";
   display: block;
   position: absolute;
   left: -4em;
@@ -301,9 +305,6 @@ body>main #content>pre .line-numbers-rows {
 #content:not(.CodeFlask)>textarea {
   -webkit-text-fill-color: #000 !important;
   opacity: 1 !important;
-}
-.line-numbers .line-numbers-rows {
-  width: 3.8em !important;
 }
 code[class*=language-],
 pre[class*=language-] {
