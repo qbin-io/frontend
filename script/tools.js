@@ -18,7 +18,7 @@ window.addEventListener("keydown", (event) => {
 function submitForm() {
     $("Q").readonly = window.isSubmitted = true;
     localStorage.justSubmitted = Date.now();
-    $("F").submit();
+    $("submit").click();
 }
 $("F").addEventListener("submit", (event) => {
     $("Q").readonly = window.isSubmitted = true;
