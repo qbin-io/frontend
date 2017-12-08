@@ -23,7 +23,8 @@ window.addEventListener("keydown", (event) => {
     } else if (ctrl && event.keyCode == 69) { // Ctrl+E
         switch ($("E").value) {
             case "14d": $("E").value = "0"; break;
-            case "0": $("E").value = "30m"; break;
+            case "0": $("E").value = "volatile"; break;
+            case "volatile": $("E").value = "30m"; break;
             case "30m": $("E").value = "24h"; break;
             case "24h": $("E").value = "14d"; break;
         }
