@@ -18,15 +18,17 @@
         <a href="/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
         <div>
             <h4 ondragstart="return false"><small>https://</small><em>beta.qbin.io/</em>$$id$$</h4>
-            <h5>Submitted: <span data-time-in="textContent">$$creation$$</span></h5>
+            <h5>$$views$$ Views. Submitted: <span data-time-in="textContent">$$creation$$</span></h5>
         </div>
         <div class="buttons" style="margin-right: 5px">
-            <div><img src="$$path$$/assets/icons/calendar-alt.svg" alt="Expiration:"><div title="$$expiration$$" data-time-in="title">$$expiration-remaining$$</div></div>
-            <div><img src="$$path$$/assets/icons/code.svg" alt="Syntax:"><div>$$syntax$$</div></div>
+            $$!if_volatile$$<div><img src="$$path$$/assets/icons/calendar-alt.svg" alt="Expiration:"><div title="$$expiration$$" data-time-in="title">$$expiration-remaining$$</div></div>$$/if_volatile$$
+            $$if_syntax$$<div><img src="$$path$$/assets/icons/code.svg" alt="Syntax:"><div>$$syntax$$</div></div>$$/if_syntax$$
         </div>
+        $$!if_volatile$$
         <div class="submit raw"><a href="$$path$$/$$id$$/raw">Raw</a></div>
         <div class="submit fork"><a href="$$path$$/$$id$$/fork">Fork</a></div>
         <div class="submit report" style="margin-right: 10px"><a href="$$path$$/$$id$$/report">Report</a></div>
+        $$/if_volatile$$
     </aside>
 
     <div id="content">$$content$$</div>
