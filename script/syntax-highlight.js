@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
 
     // Initialize CodeFlask
     window.flask = new CodeFlask();
-    flask.run("#content", { language: "", lineNumbers: true });
+    flask.run("#content", { language: "generic", lineNumbers: true });
     
     // Initialize syntax language
     updateSyntaxLanguage($("S").value);
@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
 function updateSyntaxLanguage(lang) {
     console.log("Language changed to: " + lang);
     if (lang == "markdown!") lang = "markdown";
-    if (lang == "none") lang = "";
+    if (lang == "") lang = "none";
     document.getElementsByClassName("CodeFlask__code")[0].className = "CodeFlask__code language-" + lang;
     updateEditor();
 }

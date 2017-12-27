@@ -26,6 +26,7 @@
             </select></div>
             <div data-shortcut="Ctrl+S" title="Syntax Highlighting"><img src="$$path$$/assets/icons/code.svg" alt="Syntax Highlighting:"> <select id="S" name="S"$$if_fork$$ value="$$syntax$$"$$/if_fork$$>
                 <optgroup label="General">
+                    <option value="generic">Generic Syntax</option>
                     <option value="none">No Highlighting</option>
                     <option value="markdown!">Markdown Render</option>
                 </optgroup>
@@ -72,7 +73,7 @@
                     <option>bison</option>
                     <option>brainfuck</option>
                     <option>bro</option>
-                    <option value="clike">c</option>
+                    <option>c</option>
                     <option>coffeescript</option>
                     <option>cpp</option>
                     <option>crystal</option>
@@ -245,8 +246,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/autolinker/prism-autolinker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/autoloader/prism-autoloader.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/data-uri-highlight/prism-data-uri-highlight.min.js"></script>
 <script src="$$path$$/lib/prism-css-line-numbers.js"></script>
+<script src="$$path$$/lib/prism-generic.js"></script>
+<script>Prism.languages.none={};</script>
 <script src="$$path$$/lib/codeflask.js"></script><!-- @TODO: Diff. Something was wrong with the official version -->
 
 <script>window.$ = document.getElementById.bind(document);</script><!-- jQuery for poor people :( -->
