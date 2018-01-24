@@ -32,6 +32,14 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
 
 }));
 
+// Only copy plain test
+document.addEventListener("copy", function(e) {
+    text = window.getSelection().toString();
+    e.clipboardData.setData("text/plain", text);
+    e.clipboardData.setData("text/html", text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+    e.preventDefault();
+});
+
 // Make selectable because we can control the range using JavaScript
 document.querySelector("h4").classList.add("selectable");
 
