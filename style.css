@@ -277,6 +277,9 @@ body>*>aside h4 small {
   background: #fed;
   z-index: -1;
 }
+.language-generic .token.url {
+  color: #08f;
+}
 #content>pre {
   background: transparent !important;
   margin: 0 !important;
