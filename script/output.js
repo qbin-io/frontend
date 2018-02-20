@@ -34,7 +34,11 @@ document.addEventListener("selectionchange", (event) => setTimeout(() => {
 
 // Only copy plain test
 document.addEventListener("copy", function(e) {
-    text = window.getSelection().toString();
+    text = "";
+    for (let i = 0; i < window.getSelection().rangeCount; i++) {
+        text += window.getSelection().getRangeAt(i).toString();
+    }
+    console.log(text);
     e.clipboardData.setData("text/plain", text);
     e.clipboardData.setData("text/html", text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
     e.preventDefault();
