@@ -20,6 +20,7 @@ function updateSyntaxLanguage(lang) {
     console.log("Language changed to: " + lang);
     if (lang == "markdown!") lang = "markdown";
     if (lang == "") lang = "none";
+    flask.lang = lang;
     document.getElementsByClassName("CodeFlask__code")[0].className = "CodeFlask__code language-" + lang;
     updateEditor();
 }

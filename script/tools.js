@@ -31,16 +31,16 @@ window.addEventListener("unload", () => {
 // Insert text at the current cursor position.
 // https://stackoverflow.com/a/11077016
 function insertAtCursor(el, text) {
+    if (document.activeElement != el) el.focus();
     if (document.selection) { // IE
-        el.focus();
         document.selection.createRange().text = text;
-    } else if (el.selectionStart != null) { // Others
+    } else if (window.hasOwnProperty("mozPaintCount")) { // Firefox
         const startPos = el.selectionStart;
         const endPos = el.selectionEnd;
         el.value = el.value.substring(0, startPos) + text + el.value.substring(endPos, el.value.length);
         el.selectionStart = el.selectionEnd = startPos + text.length;
     } else { // Fallback
-        el.value += text;
+        document.execCommand("insertText", false, text);
     }
     
     updateEditor();
