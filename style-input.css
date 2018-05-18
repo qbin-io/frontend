@@ -13,7 +13,7 @@
 }
 .placeholder {
   display: none;
-  font-size: 16px;
+  font-size: 15px;
   max-height: 100%;
 }
 .placeholder>div {
@@ -25,7 +25,7 @@
   padding-left: 1.5em;
 }
 .placeholder b {
-  font-family: "Fira Mono", monospace;
+  font-family: "Iosevka", monospace;
   font-size: 0.95em;
   font-weight: normal;
   color: #222;

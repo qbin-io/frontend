@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Assistant:400,600|Fira+Mono:400,600");
+@import url("assets/iosevka/iosevka.css");
 * {
   box-sizing: border-box;
 }
@@ -327,15 +327,15 @@ body>main #content>pre .line-numbers-rows {
 }
 #content {
   flex-grow: 1;
-  font-family: "Fira Mono", monospace;
+  font-family: "Iosevka", monospace;
   overflow-y: auto;
   overflow-x: hidden;
 }
 #content>textarea,
 #content>pre,
 #content>pre>code {
-  font-family: "Fira Mono" !important;
-  font-size: 16px;
+  font-family: "Iosevka" !important;
+  font-size: 15px;
   word-wrap: break-word;
   white-space: pre-wrap !important;
 }

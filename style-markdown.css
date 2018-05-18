@@ -56,7 +56,7 @@
 }
 .markdown pre,
 .markdown code {
-  font-family: "Fira Mono", monospace;
+  font-family: "Iosevka", monospace;
   font-size: 0.95em;
   border-radius: 3px;
   white-space: pre-wrap;
