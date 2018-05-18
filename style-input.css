@@ -74,6 +74,12 @@
   right: 5%;
   transform: none;
 }
+.buttons [data-shortcut]:after {
+  right: 5%;
+}
+.buttons>label[data-shortcut]:after {
+  right: -25%;
+}
 #content[data-shortcut]:after {
   top: 50%;
   right: 50%;

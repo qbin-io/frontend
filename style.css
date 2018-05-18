@@ -137,7 +137,8 @@ body>*>aside>input:active {
   align-items: flex-start;
   justify-content: center;
 }
-.buttons>div {
+.buttons>div,
+.buttons>label {
   font-size: 13px;
   padding: 3px 5px;
   height: auto;
@@ -169,6 +170,14 @@ body>*>aside>input:active {
   text-indent: 0;
   text-overflow: '';
 }
+.buttons>label>input {
+  margin-right: 4px;
+  margin-top: 1px;
+}
+.buttons>label,
+.buttons a {
+  cursor: pointer;
+}
 .buttons select:hover,
 .buttons select:active,
 .buttons select:focus {
@@ -194,6 +203,12 @@ body>*>aside h5 {
 body>*>aside h4 {
   font-weight: bold;
   cursor: text;
+  white-space: nowrap;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-overflow: ellipsis;
 }
 body>*>aside h5 {
   font-size: 13px;
@@ -233,6 +248,25 @@ body>*>aside h4 small {
   body>:not(.always-show-logo)>aside>a:first-child {
     display: none;
   }
+}
+#encrypting {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.6);
+  flex-direction: column;
+}
+#encrypting img {
+  height: 64px;
+}
+#encrypting strong {
+  font-size: 1.5em;
 }
 .token a {
   color: inherit;

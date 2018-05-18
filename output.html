@@ -16,8 +16,8 @@
 
     <aside>
         <a href="/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
-        <div>
-            <h4 ondragstart="return false"><small>https://</small><em>qbin.io/</em>$$id$$</h4>
+        <div style="flex-grow: 1; position: relative">
+            <h4 style="position: absolute" ondragstart="return false"><small>https://</small><em>qbin.io/</em>$$id$$<span id="encryption-hash"></span></h4><br>
             <h5>$$views$$ Views. Submitted: <span data-time-in="textContent">$$creation$$</span></h5>
         </div>
         <div class="buttons" style="margin-right: 5px">
@@ -34,6 +34,16 @@
     <div id="content">$$content$$</div>
 
 </main>
+
+$$if_encrypted$$
+<div id="encrypting" style="display: flex">
+    <img src="/assets/icons/lock.svg">
+    <strong>Decrypting...</strong>
+</div>
+<script src="https://cdn.rawgit.com/keybase/triplesec/master/rel/triplesec-3.0.14-min.js"></script>
+<script src="https://cdn.rawgit.com/mscdex/base91.js/master/lib/base91.js"></script>
+<script src="$$path$$/script/decrypt.js"></script>
+$$/if_encrypted$$
 
 <script src="$$path$$/script/select-text.js"></script>
 <script src="$$path$$/script/output.js"></script>

@@ -17,6 +17,10 @@
         <a href="/"><img src="$$path$$/assets/logo.svg" alt="qbin.io"></a>
         <h4>qbin</h4>
         <div class="buttons">
+            <label data-shortcut="Ctrl+Y"><input type="checkbox" id="C" name="C" value="encrypted" checked> Encrypt</label>
+            <div style="opacity: 0; pointer-events: none"><a>Configure Link</a></div>
+        </div>
+        <div class="buttons" style="margin-left: 5px">
             <div data-shortcut="Ctrl+E" title="Expiration"><img src="$$path$$/assets/icons/calendar-alt.svg" alt="Expiration:"> <select id="E" name="E">
                 <option value="30m">30 mins</option>
                 <option value="24h">24 hours</option>
@@ -214,6 +218,11 @@
 
 </form>
 
+<div id="encrypting">
+    <img src="/assets/icons/lock.svg">
+    <strong>Encrypting...</strong>
+</div>
+
 <div class="syntax-selection" style="opacity: 0"><!-- Hide until CSS is loaded -->
     <strong class="headline">General &amp; Search</strong>
     <div class="syntax-grid">
@@ -253,7 +262,10 @@
 <script src="$$path$$/lib/codeflask.js"></script><!-- @TODO: Diff. Something was wrong with the official version -->
 
 <script>window.$ = document.getElementById.bind(document);</script><!-- jQuery for poor people :( -->
+<script src="https://cdn.rawgit.com/keybase/triplesec/master/rel/triplesec-3.0.14-min.js"></script>
+<script src="https://cdn.rawgit.com/mscdex/base91.js/master/lib/base91.js"></script>
 <script src="$$path$$/script/tools.js"></script>
+<script src="$$path$$/script/encrypt.js"></script>
 <script src="$$path$$/script/syntax-highlight.js"></script>
 <script src="$$path$$/script/syntax-selection.js"></script>
 <script src="$$path$$/script/keyboard-shortcuts.js"></script>

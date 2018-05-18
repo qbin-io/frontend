@@ -31,11 +31,11 @@ window.addEventListener("keydown", (event) => {
         event.preventDefault();
     } else if (ctrl && event.keyCode == 32) { // Ctrl+Space
         $("S").setAttribute("style", "display: none"); // Hack for firefox: Ctrl+Space opens dropdown
-        document.getElementById("Q").focus();
+        $("Q").focus();
         setTimeout(() => $("S").removeAttribute("style"));
         event.preventDefault();
-    } else if (ctrl && event.keyCode == 112) { // Ctrl+F1
-        window.open("/about");
+    } else if (ctrl && event.keyCode == 89) { // Ctrl+Y
+        $("C").checked = !$("C").checked;
         event.preventDefault();
     } else if (ctrl && event.keyCode == 13) { // Ctrl+Enter
         submitForm();
