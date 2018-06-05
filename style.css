@@ -1,4 +1,3 @@
-@import url("assets/iosevka/iosevka.css");
 @import url("https://fonts.googleapis.com/css?family=Assistant:400,700|Fira+Mono:400,700");
 * {
   box-sizing: border-box;
@@ -335,7 +334,7 @@ body>main #content>pre .line-numbers-rows {
 #content>textarea,
 #content>pre,
 #content>pre>code {
-  font-family: "Fire Mono" !important;
+  font-family: "Fira Mono" !important;
   font-size: 15px;
   word-wrap: break-word;
   white-space: pre-wrap !important;
