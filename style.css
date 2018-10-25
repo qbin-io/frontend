@@ -38,7 +38,8 @@ body,
   user-select: none;
 }
 .selectable,
-#content>pre {
+#content>pre,
+.markdown {
   pointer-events: auto;
   -webkit-touch-callout: default;
   -webkit-user-select: text;
